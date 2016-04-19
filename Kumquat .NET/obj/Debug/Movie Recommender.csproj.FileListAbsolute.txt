@@ -1,0 +1,3 @@
+D:\Code\VB\Kumquat .NET\Kumquat .NET\bin\Debug\Movie Recommender.exe.config
+D:\Code\VB\Kumquat .NET\Kumquat .NET\obj\Debug\Movie Recommender.exe
+D:\Code\VB\Kumquat .NET\Kumquat .NET\obj\Debug\Movie Recommender.pdb
