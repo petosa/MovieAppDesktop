@@ -1,3 +1,13 @@
 D:\Code\VB\Kumquat .NET\Kumquat .NET\bin\Debug\Movie Recommender.exe.config
 D:\Code\VB\Kumquat .NET\Kumquat .NET\obj\Debug\Movie Recommender.exe
 D:\Code\VB\Kumquat .NET\Kumquat .NET\obj\Debug\Movie Recommender.pdb
+D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\bin\Debug\Movie Recommender.exe.config
+D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\obj\Debug\Movie Recommender.exe
+D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\obj\Debug\Movie Recommender.pdb
+D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\obj\Debug\Movie Recommender.csprojResolveAssemblyReference.cache
+D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\obj\Debug\Kumquat.NET.Dashboard.resources
+D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\obj\Debug\Kumquat.NET.Form1.resources
+D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\obj\Debug\Movie Recommender.csproj.GenerateResource.Cache
+D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\bin\Debug\Movie Recommender.exe
+D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\bin\Debug\Movie Recommender.pdb
+D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\obj\Debug\Kumquat.NET.Properties.Resources.resources

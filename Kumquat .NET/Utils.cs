@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieRecommender
+namespace Kumquat.NET
 {
-    public static class Utils
+    static class Utils
     {
-        public static List<String> getTitles(String q, String aspect)
+        public static List<String> getAspect(String q, String aspect)
         {
             List<String> arr = new List<String>();
             while(q.Contains("\""+ aspect +"\":"))
@@ -17,11 +17,14 @@ namespace MovieRecommender
                 index += 4 + aspect.Length;
                 String build = "";
                 char at = q[index];
-                while(q[index] != '"')
+                while (q[index] != '"')
                 {
                     build += q[index];
+                    index++;
                 }
                 arr.Add(build);
+                q = q.Substring(index);
+                Console.WriteLine(build);
             }
             return arr;
         }

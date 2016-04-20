@@ -127,12 +127,6 @@ namespace Kumquat.NET
 
             
         }
-
-        private void button6_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void exit_Click(object sender, EventArgs e)
         {
             Application.Exit();

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,5 +45,39 @@ namespace Kumquat.NET
             profmajor.Visible = true;
             profdesc.Visible = true;
         }
+
+        private void doSearch2(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                doSearchAct();
+            }
+        }
+        private void doSearch(object sender, EventArgs e)
+        {
+            doSearchAct();
+        }
+        private void doSearchAct() { 
+                using (WebClient client = new WebClient())
+                {
+                    String q = searchbox.Text;
+                    if (!q.Equals(""))
+                    {
+                        String htmlCode = client.DownloadString("http://www.omdbapi.com/?s=" + q);
+                    if (htmlCode.Contains("Error\":\"Movie")) {
+                        MessageBox.Show("Movie was not found.");
+                    }
+                    else if (htmlCode.Contains("Error\":"))
+                    {
+                        MessageBox.Show("Search terms must be at least 2 characters long.");
+                    } else
+                    {
+                        MessageBox.Show(Utils.getAspect(htmlCode,"Title")[0]);
+                    }
+                    }
+                }        
+        }
+
+
     }
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             Bloom bloom1 = new Bloom();
             Bloom bloom2 = new Bloom();
             Bloom bloom3 = new Bloom();
@@ -92,31 +94,32 @@
             Bloom bloom62 = new Bloom();
             Bloom bloom63 = new Bloom();
             Bloom bloom64 = new Bloom();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.profemail = new System.Windows.Forms.Label();
+            this.profname = new System.Windows.Forms.Label();
+            this.userprof = new System.Windows.Forms.Label();
+            this.profpic = new System.Windows.Forms.PictureBox();
+            this.mydescription = new System.Windows.Forms.Label();
+            this.mymajor = new System.Windows.Forms.Label();
+            this.saveprof = new System.Windows.Forms.Button();
+            this.profdesc = new System.Windows.Forms.RichTextBox();
+            this.profmajor = new System.Windows.Forms.ComboBox();
             this.noprof = new System.Windows.Forms.Label();
             this.createprof = new System.Windows.Forms.Button();
             this.studioTheme1 = new StudioTheme();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.studioButton4 = new StudioButton();
             this.studioButton3 = new StudioButton();
             this.studioButton2 = new StudioButton();
             this.studioButton1 = new StudioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.searchbox = new System.Windows.Forms.RichTextBox();
             this.exit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.profmajor = new System.Windows.Forms.ComboBox();
-            this.profdesc = new System.Windows.Forms.RichTextBox();
-            this.saveprof = new System.Windows.Forms.Button();
-            this.mymajor = new System.Windows.Forms.Label();
-            this.mydescription = new System.Windows.Forms.Label();
-            this.profpic = new System.Windows.Forms.PictureBox();
-            this.userprof = new System.Windows.Forms.Label();
-            this.profname = new System.Windows.Forms.Label();
-            this.profemail = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
-            this.studioTheme1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profpic)).BeginInit();
+            this.studioTheme1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -140,6 +143,95 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Profile";
+            // 
+            // profemail
+            // 
+            this.profemail.AutoSize = true;
+            this.profemail.Location = new System.Drawing.Point(23, 233);
+            this.profemail.Name = "profemail";
+            this.profemail.Size = new System.Drawing.Size(53, 18);
+            this.profemail.TabIndex = 10;
+            this.profemail.Text = "email";
+            this.profemail.Visible = false;
+            // 
+            // profname
+            // 
+            this.profname.AutoSize = true;
+            this.profname.Location = new System.Drawing.Point(23, 211);
+            this.profname.Name = "profname";
+            this.profname.Size = new System.Drawing.Size(53, 18);
+            this.profname.TabIndex = 9;
+            this.profname.Text = "name";
+            this.profname.Visible = false;
+            // 
+            // userprof
+            // 
+            this.userprof.AutoSize = true;
+            this.userprof.Location = new System.Drawing.Point(97, 38);
+            this.userprof.Name = "userprof";
+            this.userprof.Size = new System.Drawing.Size(88, 18);
+            this.userprof.TabIndex = 8;
+            this.userprof.Text = "username";
+            this.userprof.Visible = false;
+            // 
+            // profpic
+            // 
+            this.profpic.Image = ((System.Drawing.Image)(resources.GetObject("profpic.Image")));
+            this.profpic.Location = new System.Drawing.Point(68, 67);
+            this.profpic.Name = "profpic";
+            this.profpic.Size = new System.Drawing.Size(151, 141);
+            this.profpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profpic.TabIndex = 7;
+            this.profpic.TabStop = false;
+            this.profpic.Visible = false;
+            // 
+            // mydescription
+            // 
+            this.mydescription.AutoSize = true;
+            this.mydescription.Location = new System.Drawing.Point(20, 347);
+            this.mydescription.Name = "mydescription";
+            this.mydescription.Size = new System.Drawing.Size(128, 18);
+            this.mydescription.TabIndex = 6;
+            this.mydescription.Text = "My Description";
+            this.mydescription.Visible = false;
+            // 
+            // mymajor
+            // 
+            this.mymajor.AutoSize = true;
+            this.mymajor.Location = new System.Drawing.Point(20, 279);
+            this.mymajor.Name = "mymajor";
+            this.mymajor.Size = new System.Drawing.Size(81, 18);
+            this.mymajor.TabIndex = 5;
+            this.mymajor.Text = "My Major";
+            this.mymajor.Visible = false;
+            // 
+            // saveprof
+            // 
+            this.saveprof.Location = new System.Drawing.Point(20, 550);
+            this.saveprof.Name = "saveprof";
+            this.saveprof.Size = new System.Drawing.Size(256, 29);
+            this.saveprof.TabIndex = 4;
+            this.saveprof.Text = "Save Profile";
+            this.saveprof.UseVisualStyleBackColor = true;
+            this.saveprof.Visible = false;
+            // 
+            // profdesc
+            // 
+            this.profdesc.Location = new System.Drawing.Point(20, 368);
+            this.profdesc.Name = "profdesc";
+            this.profdesc.Size = new System.Drawing.Size(256, 167);
+            this.profdesc.TabIndex = 3;
+            this.profdesc.Text = "";
+            this.profdesc.Visible = false;
+            // 
+            // profmajor
+            // 
+            this.profmajor.FormattingEnabled = true;
+            this.profmajor.Location = new System.Drawing.Point(20, 305);
+            this.profmajor.Name = "profmajor";
+            this.profmajor.Size = new System.Drawing.Size(256, 26);
+            this.profmajor.TabIndex = 2;
+            this.profmajor.Visible = false;
             // 
             // noprof
             // 
@@ -201,12 +293,13 @@
         bloom10,
         bloom11,
         bloom12};
+            this.studioTheme1.Controls.Add(this.listView1);
             this.studioTheme1.Controls.Add(this.studioButton4);
             this.studioTheme1.Controls.Add(this.studioButton3);
             this.studioTheme1.Controls.Add(this.studioButton2);
             this.studioTheme1.Controls.Add(this.studioButton1);
             this.studioTheme1.Controls.Add(this.label2);
-            this.studioTheme1.Controls.Add(this.richTextBox1);
+            this.studioTheme1.Controls.Add(this.searchbox);
             this.studioTheme1.Controls.Add(this.exit);
             this.studioTheme1.Controls.Add(this.groupBox1);
             this.studioTheme1.Controls.Add(this.groupBox2);
@@ -224,6 +317,14 @@
             this.studioTheme1.TabIndex = 1;
             this.studioTheme1.Text = "Movie Recommender | Dashboard";
             this.studioTheme1.TransparencyKey = System.Drawing.Color.Fuchsia;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(317, 177);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(816, 515);
+            this.listView1.TabIndex = 9;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // studioButton4
             // 
@@ -441,6 +542,7 @@
             this.studioButton1.TabIndex = 4;
             this.studioButton1.Text = "Go";
             this.studioButton1.Transparent = true;
+            this.studioButton1.Click += new System.EventHandler(this.doSearch);
             // 
             // label2
             // 
@@ -454,14 +556,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Search movies";
             // 
-            // richTextBox1
+            // searchbox
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Verdana", 16F);
-            this.richTextBox1.Location = new System.Drawing.Point(550, 48);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(521, 54);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.searchbox.Font = new System.Drawing.Font("Verdana", 16F);
+            this.searchbox.Location = new System.Drawing.Point(550, 48);
+            this.searchbox.Multiline = false;
+            this.searchbox.Name = "searchbox";
+            this.searchbox.Size = new System.Drawing.Size(521, 54);
+            this.searchbox.TabIndex = 2;
+            this.searchbox.Text = "";
+            this.searchbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.doSearch2);
             // 
             // exit
             // 
@@ -485,94 +589,11 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Find Movies";
             // 
-            // profmajor
+            // imageList1
             // 
-            this.profmajor.FormattingEnabled = true;
-            this.profmajor.Location = new System.Drawing.Point(20, 305);
-            this.profmajor.Name = "profmajor";
-            this.profmajor.Size = new System.Drawing.Size(256, 26);
-            this.profmajor.TabIndex = 2;
-            this.profmajor.Visible = false;
-            // 
-            // profdesc
-            // 
-            this.profdesc.Location = new System.Drawing.Point(20, 368);
-            this.profdesc.Name = "profdesc";
-            this.profdesc.Size = new System.Drawing.Size(256, 167);
-            this.profdesc.TabIndex = 3;
-            this.profdesc.Text = "";
-            this.profdesc.Visible = false;
-            // 
-            // saveprof
-            // 
-            this.saveprof.Location = new System.Drawing.Point(20, 550);
-            this.saveprof.Name = "saveprof";
-            this.saveprof.Size = new System.Drawing.Size(256, 29);
-            this.saveprof.TabIndex = 4;
-            this.saveprof.Text = "Save Profile";
-            this.saveprof.UseVisualStyleBackColor = true;
-            this.saveprof.Visible = false;
-            // 
-            // mymajor
-            // 
-            this.mymajor.AutoSize = true;
-            this.mymajor.Location = new System.Drawing.Point(20, 279);
-            this.mymajor.Name = "mymajor";
-            this.mymajor.Size = new System.Drawing.Size(81, 18);
-            this.mymajor.TabIndex = 5;
-            this.mymajor.Text = "My Major";
-            this.mymajor.Visible = false;
-            // 
-            // mydescription
-            // 
-            this.mydescription.AutoSize = true;
-            this.mydescription.Location = new System.Drawing.Point(20, 347);
-            this.mydescription.Name = "mydescription";
-            this.mydescription.Size = new System.Drawing.Size(128, 18);
-            this.mydescription.TabIndex = 6;
-            this.mydescription.Text = "My Description";
-            this.mydescription.Visible = false;
-            // 
-            // profpic
-            // 
-            this.profpic.Image = ((System.Drawing.Image)(resources.GetObject("profpic.Image")));
-            this.profpic.Location = new System.Drawing.Point(68, 67);
-            this.profpic.Name = "profpic";
-            this.profpic.Size = new System.Drawing.Size(151, 141);
-            this.profpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profpic.TabIndex = 7;
-            this.profpic.TabStop = false;
-            this.profpic.Visible = false;
-            // 
-            // userprof
-            // 
-            this.userprof.AutoSize = true;
-            this.userprof.Location = new System.Drawing.Point(97, 38);
-            this.userprof.Name = "userprof";
-            this.userprof.Size = new System.Drawing.Size(88, 18);
-            this.userprof.TabIndex = 8;
-            this.userprof.Text = "username";
-            this.userprof.Visible = false;
-            // 
-            // profname
-            // 
-            this.profname.AutoSize = true;
-            this.profname.Location = new System.Drawing.Point(23, 211);
-            this.profname.Name = "profname";
-            this.profname.Size = new System.Drawing.Size(53, 18);
-            this.profname.TabIndex = 9;
-            this.profname.Text = "name";
-            this.profname.Visible = false;
-            // 
-            // profemail
-            // 
-            this.profemail.AutoSize = true;
-            this.profemail.Location = new System.Drawing.Point(23, 233);
-            this.profemail.Name = "profemail";
-            this.profemail.Size = new System.Drawing.Size(53, 18);
-            this.profemail.TabIndex = 10;
-            this.profemail.Text = "email";
-            this.profemail.Visible = false;
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Dashboard
             // 
@@ -586,9 +607,9 @@
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profpic)).EndInit();
             this.studioTheme1.ResumeLayout(false);
             this.studioTheme1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profpic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -604,7 +625,7 @@
         private StudioButton studioButton2;
         private StudioButton studioButton1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox searchbox;
         private System.Windows.Forms.GroupBox groupBox2;
         private StudioButton studioButton4;
         private System.Windows.Forms.Label profemail;
@@ -616,5 +637,7 @@
         private System.Windows.Forms.Button saveprof;
         private System.Windows.Forms.RichTextBox profdesc;
         private System.Windows.Forms.ComboBox profmajor;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
