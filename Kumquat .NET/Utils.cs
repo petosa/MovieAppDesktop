@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieRecommender
 {
-    public class Utils
+    public static class Utils
     {
         public static List<String> getTitles(String q, String aspect)
         {
