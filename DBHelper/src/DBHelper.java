@@ -65,8 +65,6 @@ public class DBHelper {
                     String major = postSnapshot.child("major").getValue(String.class);
                     String description = postSnapshot.child("description").getValue(String.class);
 
-                    System.out.println("begin printing");
-
                     USERS_PW.print("@n(\"");
                     USERS_PW.print(name);
                     USERS_PW.print("\")n;|");
