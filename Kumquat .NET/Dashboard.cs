@@ -73,8 +73,10 @@ namespace Kumquat.NET
                     } else
                     {
                         MessageBox.Show(Utils.getAspect(htmlCode,"Title")[0]);
+                        MessageBox.Show(Utils.getAspect(htmlCode, "Year")[0]);
+
                     }
-                    }
+                }
                 }        
         }
 

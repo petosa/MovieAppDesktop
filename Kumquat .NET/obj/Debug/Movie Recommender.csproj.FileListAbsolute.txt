@@ -11,3 +11,13 @@ D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\obj\Debug\Movie Recommender.csproj.G
 D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\bin\Debug\Movie Recommender.exe
 D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\bin\Debug\Movie Recommender.pdb
 D:\Code\VB\Git\MovieAppDesktop\Kumquat .NET\obj\Debug\Kumquat.NET.Properties.Resources.resources
+D:\Users\theon\Desktop\CS\CS2340\MovieAppDesktop\Kumquat .NET\bin\Debug\Movie Recommender.exe.config
+D:\Users\theon\Desktop\CS\CS2340\MovieAppDesktop\Kumquat .NET\obj\Debug\Movie Recommender.exe
+D:\Users\theon\Desktop\CS\CS2340\MovieAppDesktop\Kumquat .NET\obj\Debug\Movie Recommender.pdb
+D:\Users\theon\Desktop\CS\CS2340\MovieAppDesktop\Kumquat .NET\bin\Debug\Movie Recommender.exe
+D:\Users\theon\Desktop\CS\CS2340\MovieAppDesktop\Kumquat .NET\bin\Debug\Movie Recommender.pdb
+D:\Users\theon\Desktop\CS\CS2340\MovieAppDesktop\Kumquat .NET\obj\Debug\Movie Recommender.csprojResolveAssemblyReference.cache
+D:\Users\theon\Desktop\CS\CS2340\MovieAppDesktop\Kumquat .NET\obj\Debug\Kumquat.NET.Dashboard.resources
+D:\Users\theon\Desktop\CS\CS2340\MovieAppDesktop\Kumquat .NET\obj\Debug\Kumquat.NET.Form1.resources
+D:\Users\theon\Desktop\CS\CS2340\MovieAppDesktop\Kumquat .NET\obj\Debug\Kumquat.NET.Properties.Resources.resources
+D:\Users\theon\Desktop\CS\CS2340\MovieAppDesktop\Kumquat .NET\obj\Debug\Movie Recommender.csproj.GenerateResource.Cache

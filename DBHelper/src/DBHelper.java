@@ -50,13 +50,13 @@ public class DBHelper {
         USERS_TABLE.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    try {
-                        USERS_PW = new PrintWriter("users.csv");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                try {
+                    USERS_PW = new PrintWriter("users.csv");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     String name = postSnapshot.child("name").getValue(String.class);
                     String email = postSnapshot.child("email").getValue(String.class);
                     String username = postSnapshot.child("username").getValue(String.class);
