@@ -42,8 +42,6 @@ public class DBHelper {
             LOG_BW = new BufferedWriter(LOG_FW);
             LOG_PW = new PrintWriter(LOG_BW);
             LOG_PW.println("\n\nBegin logging");
-
-            MOVIES_PW = new PrintWriter("movies.csv");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,34 +60,34 @@ public class DBHelper {
                     String name = postSnapshot.child("name").getValue(String.class);
                     String email = postSnapshot.child("email").getValue(String.class);
                     String username = postSnapshot.child("username").getValue(String.class);
-                    int passwordHash = postSnapshot.child("passwordHash").getValue(Integer.class);
+                    String passwordHash = postSnapshot.child("passwordHash").getValue(String.class);
                     String status = postSnapshot.child("status").getValue(String.class);
                     String major = postSnapshot.child("major").getValue(String.class);
                     String description = postSnapshot.child("description").getValue(String.class);
 
                     System.out.println("begin printing");
 
-                    USERS_PW.print("@s(");
+                    USERS_PW.print("@n(\"");
                     USERS_PW.print(name);
-                    USERS_PW.print(");|");
-                    USERS_PW.print("@s(");
+                    USERS_PW.print("\")n;|");
+                    USERS_PW.print("@e(\"");
                     USERS_PW.print(email);
-                    USERS_PW.print(");|");
-                    USERS_PW.print("@s(");
+                    USERS_PW.print("\")e;|");
+                    USERS_PW.print("@u(\"");
                     USERS_PW.print(username);
-                    USERS_PW.print(");|");
-                    USERS_PW.print("@s(");
+                    USERS_PW.print("\")u;|");
+                    USERS_PW.print("@p(\"");
                     USERS_PW.print(passwordHash);
-                    USERS_PW.print(");|");
-                    USERS_PW.print("@s(");
+                    USERS_PW.print("\")p;|");
+                    USERS_PW.print("@s(\"");
                     USERS_PW.print(status);
-                    USERS_PW.print(");|");
-                    USERS_PW.print("@s(");
+                    USERS_PW.print("\");|");
+                    USERS_PW.print("@m(\"");
                     USERS_PW.print(major);
-                    USERS_PW.print(");|");
-                    USERS_PW.print("@s(");
+                    USERS_PW.print("\")m;|");
+                    USERS_PW.print("@d(\"");
                     USERS_PW.print(description);
-                    USERS_PW.println(");|");
+                    USERS_PW.println("\")d;|");
                 }
 
                 USERS_PW.close();
@@ -101,6 +99,70 @@ public class DBHelper {
                 StringBuffer temp = new StringBuffer();
                 temp.append(LOG_DATE_FORMAT.format(date));
                 temp.append("   Error initializing user: ");
+                temp.append(firebaseError.getMessage());
+                LOG_PW.println(temp);
+                LOG_PW.close();
+            }
+        });
+
+        // Write all movies to MOVIES_FILE and update them in realtime
+        MOVIE_TABLE.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                try {
+                    MOVIES_PW = new PrintWriter("movies.csv");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    float averageRating = postSnapshot.child("averageRating").getValue(Float.class);
+                    String imgURL = postSnapshot.child("imgURL").getValue(String.class);
+                    String title = postSnapshot.child("title").getValue(String.class);
+
+                    MOVIES_PW.print("@t(\"");
+                    MOVIES_PW.print(title);
+                    MOVIES_PW.print("\")t;|");
+                    MOVIES_PW.print("@i(\"");
+                    MOVIES_PW.print(imgURL);
+                    MOVIES_PW.print("\")i;|");
+                    MOVIES_PW.print("@ar(\"");
+                    MOVIES_PW.print(averageRating);
+                    MOVIES_PW.print("\")ar;|");
+                    MOVIES_PW.print("@rtgs(\"");
+
+                    if (postSnapshot.hasChild("ratings")) {
+                        for (DataSnapshot post2 : postSnapshot.child("ratings").getChildren()) {
+                            String comment = post2.child("comment").getValue(String.class);
+                            float rating = post2.child("rating").getValue(Float.class);
+                            String poster = post2.child("user").getValue(String.class);
+
+                            MOVIES_PW.print("@rtg(\"");
+                            MOVIES_PW.print("@c(\"");
+                            MOVIES_PW.print(comment);
+                            MOVIES_PW.print("\")c;|");
+                            MOVIES_PW.print("@r(\"");
+                            MOVIES_PW.print(rating);
+                            MOVIES_PW.print("\")r;|");
+                            MOVIES_PW.print("@p(\"");
+                            MOVIES_PW.print(poster);
+                            MOVIES_PW.print("\")p;|");
+                            MOVIES_PW.print("\")rtg;|");
+                        }
+                    }
+
+                    MOVIES_PW.println("\")rtgs;|");
+                }
+
+                MOVIES_PW.close();
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                Date date = new Date();
+                StringBuffer temp = new StringBuffer();
+                temp.append(LOG_DATE_FORMAT.format(date));
+                temp.append("   Error initializing movie: ");
                 temp.append(firebaseError.getMessage());
                 LOG_PW.println(temp);
                 LOG_PW.close();
