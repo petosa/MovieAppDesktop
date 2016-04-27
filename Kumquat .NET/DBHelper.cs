@@ -45,13 +45,13 @@ namespace Kumquat.NET {
         public static void runCommand(String exe, String param) {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo(exe, param);
-            //startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             process.StartInfo = startInfo;
             process.Start();
         }
 
         public static void runDBCLI(String param) {
-            runCommand("java.exe", "-jar DBCLI.jar " + param);
+            runCommand("javaw.exe", "-jar DBCLI.jar " + param);
         }
 
         public static Boolean isUser(String username) {
