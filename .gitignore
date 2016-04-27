@@ -3,3 +3,6 @@ DBHelper/.idea
 "Kumquat .NET/bin"
 "Kumquat .NET/obj"
 /.vs
+log.txt
+movies.csv
+users.csv
