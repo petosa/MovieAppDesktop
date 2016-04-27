@@ -13,6 +13,8 @@ namespace Kumquat.NET
 {
     public partial class Dashboard : Form
     {
+        public String htmlCode = "";
+
         public Dashboard()
         {
             InitializeComponent();
@@ -57,61 +59,67 @@ namespace Kumquat.NET
         {
             doSearchAct();
         }
-        private void doSearchAct() { 
-                using (WebClient client = new WebClient())
+        private void doSearchAct()
+        {
+            //Flip
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            using (WebClient client = new WebClient())
+            {
+                String q = searchbox.Text;
+                if (!q.Equals(""))
                 {
-                    String q = searchbox.Text;
-                    if (!q.Equals(""))
+                    htmlCode = client.DownloadString("http://www.omdbapi.com/?s=" + q);
+                    if (htmlCode.Contains("Error\":\"Movie"))
                     {
-                        String htmlCode = client.DownloadString("http://www.omdbapi.com/?s=" + q);
-                    if (htmlCode.Contains("Error\":\"Movie")) {
                         MessageBox.Show("Movie was not found.");
                     }
                     else if (htmlCode.Contains("Error\":"))
                     {
                         MessageBox.Show("Search terms must be at least 2 characters long.");
-                    } else
+                    }
+                    else
                     {
-                        listView1.Items.Clear();
-                        backgroundWorker1.RunWorkerAsync();
+                        //Lists of data from get
                         List<String> titles = Utils.getAspect(htmlCode, "Title");
                         List<String> years = Utils.getAspect(htmlCode, "Year");
                         List<String> posters = Utils.getAspect(htmlCode, "Poster");
+
+                        //Clear listview
+                        listView1.Items.Clear();
+
+                        //Go through all movies
                         for (int i = 0; i < titles.Count; i++)
                         {
                             ListViewItem lvi = new ListViewItem();
-                            try {
+                            //Poster available
+                            if (!posters[i].Equals("N/A"))
+                            {
                                 WebRequest requestPic = WebRequest.Create(posters[i]);
                                 WebResponse responsePic = requestPic.GetResponse();
                                 Image webImage = Image.FromStream(responsePic.GetResponseStream());
                                 imageList1.Images.Add(posters[i], webImage);
                                 lvi.ImageKey = posters[i];
                             }
-                            catch
+                            //No poster
+                            else
                             {
                                 lvi.ImageKey = "notfound.png";
                             }
+                            //Generate ListViewItem
                             lvi.Text = titles[i] + " (" + years[i] + ")";
                             listView1.Items.Add(lvi);
+
+                            //Flop
+                            timer1.Enabled = false;
                         }
                     }
                 }
-                }        
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            ListViewItem abg = new ListViewItem("cowbell");
-
-
-            if (listView1.InvokeRequired)
-                listView1.Invoke(new MethodInvoker(delegate
-                {
-                    listView1.Items.Add(abg);
-
-                }));
-            else
-                listView1.Items.Add(abg);
+            }
         }
     }
 }

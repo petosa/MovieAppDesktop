@@ -117,7 +117,7 @@
             this.noprof = new System.Windows.Forms.Label();
             this.createprof = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.studioTheme1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profpic)).BeginInit();
@@ -597,9 +597,9 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Find Movies";
             // 
-            // backgroundWorker1
+            // timer1
             // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Dashboard
             // 
@@ -645,6 +645,6 @@
         private System.Windows.Forms.ComboBox profmajor;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ImageList imageList1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
