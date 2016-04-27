@@ -33,5 +33,66 @@ namespace Kumquat.NET {
 
             return sb.ToString();
         }
+
+        public static void startListeners() {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo("javaw.exe", "-jar DBHelper.jar");
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            process.StartInfo = startInfo;
+            process.Start();
+        }
+
+        public static void runCommand(String exe, String param) {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo(exe, param);
+            //startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            process.StartInfo = startInfo;
+            process.Start();
+        }
+
+        public static void runDBCLI(String param) {
+            runCommand("java.exe", "-jar DBCLI.jar " + param);
+        }
+
+        public static Boolean isUser(String username) {
+            return allMovies.ContainsKey(username);
+        }
+
+        public static Boolean addUser(User u) {
+            u.setStatus("Active");
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append("\"addUser\" ");
+            sb.Append("\"");
+            if (u.getProfile() != null) {
+                sb.Append(u.getProfile().getDesc());
+            }
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(u.getEmail());
+            sb.Append("\" ");
+            sb.Append("\"");
+            if (u.getProfile() != null) {
+                sb.Append(u.getProfile().getMajor());
+            }
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(u.getName());
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(u.getPasswordHash());
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(u.getStatus());
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(u.getUsername());
+            sb.Append("\"");
+
+            runDBCLI(sb.ToString());
+
+            allUsers.Add(u.getUsername(), u);
+            return allUsers.ContainsKey(u.getUsername());
+        }
     }
 }

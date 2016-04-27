@@ -18,6 +18,11 @@ namespace Kumquat.NET
             InitializeComponent();
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+
+            model.User u = new model.User("mem", "mem", "mem", "mem");
+
+            Boolean b = DBHelper.addUser(u);
+
             try {
                 UserManager.ub.Add("meme", "base");
                 UserManager.ub.Add("cow", "bell");
