@@ -54,6 +54,8 @@ namespace Kumquat.NET {
             runCommand("javaw.exe", "-jar DBCLI.jar " + param);
         }
 
+        public static List<User> getAllUsers() { return allUsers.Values.ToList(); }
+
         public static Boolean isUser(String username) {
             return allMovies.ContainsKey(username);
         }
@@ -93,6 +95,106 @@ namespace Kumquat.NET {
 
             allUsers.Add(u.getUsername(), u);
             return allUsers.ContainsKey(u.getUsername());
+        }
+
+        public static User getUser(String username) {
+            return allUsers[username];
+        }
+
+        public static void lockUser(String username) {
+            setStatus(username, "Locked");
+        }
+
+        public static void banUser(String username) {
+            setStatus(username, "Banned");
+        }
+
+        public static void activateUser(String username) {
+            setStatus(username, "Active");
+        }
+
+        public static void setDescription(String username, String description) {
+            allUsers[username].getProfile().setDesc(description);
+            StringBuilder sb = new StringBuilder();
+            sb.Append("\"uset\" ");
+            sb.Append("\"users/" + username + "\" ");
+            sb.Append("\"description\" ");
+            sb.Append("\"" + description + "\"");
+            runDBCLI(sb.ToString());
+        }
+
+        public static void setEmail(String username, String email) {
+            allUsers[username].setEmail(email);
+            StringBuilder sb = new StringBuilder();
+            sb.Append("\"uset\" ");
+            sb.Append("\"users/" + username + "\" ");
+            sb.Append("\"email\" ");
+            sb.Append("\"" + email + "\"");
+            runDBCLI(sb.ToString());
+        }
+
+        public static void setMajor(String username, String major) {
+            allUsers[username].getProfile().setMajor(major);
+            StringBuilder sb = new StringBuilder();
+            sb.Append("\"uset\" ");
+            sb.Append("\"users/" + username + "\" ");
+            sb.Append("\"major\" ");
+            sb.Append("\"" + major + "\"");
+            runDBCLI(sb.ToString());
+        }
+
+        public static void setName(String username, String name) {
+            allUsers[username].setName(name);
+            StringBuilder sb = new StringBuilder();
+            sb.Append("\"uset\" ");
+            sb.Append("\"users/" + username + "\" ");
+            sb.Append("\"name\" ");
+            sb.Append("\"" + name + "\"");
+            runDBCLI(sb.ToString());
+        }
+
+        public static void setPasswordHash(String username, String passwordHash) {
+            allUsers[username].setPasswordHash(passwordHash);
+            StringBuilder sb = new StringBuilder();
+            sb.Append("\"uset\" ");
+            sb.Append("\"users/" + username + "\" ");
+            sb.Append("\"passwordHash\" ");
+            sb.Append("\"" + passwordHash + "\"");
+            runDBCLI(sb.ToString());
+        }
+
+        public static void setStatus(String username, String status) {
+            allUsers[username].setStatus(status);
+            StringBuilder sb = new StringBuilder();
+            sb.Append("\"uset\" ");
+            sb.Append("\"users/" + username + "\" ");
+            sb.Append("\"status\" ");
+            sb.Append("\"" + status + "\"");
+            runDBCLI(sb.ToString());
+        }
+
+        public static String getDescription(String username) {
+            return allUsers[username].getProfile().getDesc();
+        }
+
+        public static String getEmail(String username) {
+            return allUsers[username].getEmail();
+        }
+
+        public static String getMajor(String username) {
+            return allUsers[username].getProfile().getMajor();
+        }
+
+        public static String getName(String username) {
+            return allUsers[username].getName();
+        }
+        
+        public static String getPasswordHash(String username) {
+            return allUsers[username].getPasswordHash();
+        }
+
+        public static String getStatus(String username) {
+            return allUsers[username].getStatus();
         }
     }
 }
