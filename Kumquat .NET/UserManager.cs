@@ -13,7 +13,8 @@ namespace Kumquat.NET
         
         public static void addAccount(String n, String e, String u, String p)
         {
-            User user = new User(n, e, u, p);
+            User user = new User(n, e, u, DBHelper.getDigest(p));
+            DBHelper.setCurrentUser(user);
             DBHelper.addUser(user);
         }
 
