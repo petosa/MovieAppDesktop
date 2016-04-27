@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kumquat.NET.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,10 @@ namespace Kumquat.NET
     {
         public static Dictionary<String, String> ub = new Dictionary<String, String>();
         
-        public static void addAccount(String u, String p)
+        public static void addAccount(String n, String e, String u, String p)
         {
-            ub.Add(u, p);
+            User user = new User(n, e, u, p);
+            DBHelper.addUser(user);
         }
 
         public static Boolean userExists(String username)

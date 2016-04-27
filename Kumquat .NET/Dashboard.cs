@@ -113,6 +113,7 @@ namespace Kumquat.NET
                             }
                             //Generate ListViewItem
                             lvi.Text = titles[i] + " (" + years[i] + ") RATING/5";
+                            lvi.Tag = titles[i] + "☻" + years[i] + "☻" + "4";
                             listView1.Items.Add(lvi);
 
                             //Flop
@@ -127,7 +128,7 @@ namespace Kumquat.NET
         {
             String data = e.Item.Text;
             Image img = imageList1.Images[e.Item.ImageKey];
-            MovieProfile mp = new MovieProfile(data, img);
+            MovieProfile mp = new MovieProfile(e.Item, data, img);
             mp.Show();
         }
     }

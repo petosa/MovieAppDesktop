@@ -12,7 +12,7 @@ namespace Kumquat.NET
 {
     public partial class MovieProfile : Form
     {
-        public MovieProfile(String name, Image img)
+        public MovieProfile(ListViewItem lvi, String name, Image img)
         {
             InitializeComponent();
             studioTheme1.Text = name;
@@ -20,6 +20,7 @@ namespace Kumquat.NET
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             this.TopMost = true;
             pictureBox1.Image = img;
+            textBox1.Text = (lvi.Tag.ToString()).Split('☻')[0] + " (" + (lvi.Tag.ToString()).Split('☻')[1] + ")";
         }
 
         private void studioButton2_Click(object sender, EventArgs e)

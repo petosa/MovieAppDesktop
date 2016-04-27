@@ -66,20 +66,42 @@
             Bloom bloom36 = new Bloom();
             Bloom bloom37 = new Bloom();
             Bloom bloom38 = new Bloom();
+            Bloom bloom39 = new Bloom();
+            Bloom bloom40 = new Bloom();
+            Bloom bloom41 = new Bloom();
+            Bloom bloom42 = new Bloom();
+            Bloom bloom43 = new Bloom();
+            Bloom bloom44 = new Bloom();
+            Bloom bloom45 = new Bloom();
+            Bloom bloom46 = new Bloom();
+            Bloom bloom47 = new Bloom();
+            Bloom bloom48 = new Bloom();
+            Bloom bloom49 = new Bloom();
+            Bloom bloom50 = new Bloom();
+            Bloom bloom51 = new Bloom();
             this.studioButton1 = new StudioButton();
             this.studioButton2 = new StudioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.studioTheme1 = new StudioTheme();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.star5 = new System.Windows.Forms.Button();
             this.star4 = new System.Windows.Forms.Button();
             this.star3 = new System.Windows.Forms.Button();
             this.star2 = new System.Windows.Forms.Button();
             this.star1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.studioButton3 = new StudioButton();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.studioTheme1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // studioButton1
@@ -181,7 +203,7 @@
             this.studioButton2.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
             this.studioButton2.Font = new System.Drawing.Font("Verdana", 8F);
             this.studioButton2.Image = null;
-            this.studioButton2.Location = new System.Drawing.Point(744, 3);
+            this.studioButton2.Location = new System.Drawing.Point(1045, 3);
             this.studioButton2.Name = "studioButton2";
             this.studioButton2.NoRounding = false;
             this.studioButton2.Size = new System.Drawing.Size(75, 23);
@@ -195,7 +217,7 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox1.Location = new System.Drawing.Point(31, 91);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 360);
+            this.pictureBox1.Size = new System.Drawing.Size(240, 372);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -208,7 +230,7 @@
             this.textBox1.Location = new System.Drawing.Point(31, 43);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(764, 42);
+            this.textBox1.Size = new System.Drawing.Size(785, 42);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Movie Title (YEAR)";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -254,6 +276,10 @@
         bloom36,
         bloom37,
         bloom38};
+            this.studioTheme1.Controls.Add(this.listView1);
+            this.studioTheme1.Controls.Add(this.studioButton3);
+            this.studioTheme1.Controls.Add(this.textBox2);
+            this.studioTheme1.Controls.Add(this.richTextBox1);
             this.studioTheme1.Controls.Add(this.label2);
             this.studioTheme1.Controls.Add(this.label1);
             this.studioTheme1.Controls.Add(this.star5);
@@ -264,6 +290,9 @@
             this.studioTheme1.Controls.Add(this.textBox1);
             this.studioTheme1.Controls.Add(this.pictureBox1);
             this.studioTheme1.Controls.Add(this.studioButton2);
+            this.studioTheme1.Controls.Add(this.panel1);
+            this.studioTheme1.Controls.Add(this.panel2);
+            this.studioTheme1.Controls.Add(this.panel3);
             this.studioTheme1.Customization = "ZEYy/3NVQf9kRjL/RigU/1o8KP8AAAAP////AD4gDP8AAAAU////HgAAAP//////";
             this.studioTheme1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.studioTheme1.Font = new System.Drawing.Font("Verdana", 8F);
@@ -273,12 +302,44 @@
             this.studioTheme1.Name = "studioTheme1";
             this.studioTheme1.NoRounding = false;
             this.studioTheme1.Sizable = true;
-            this.studioTheme1.Size = new System.Drawing.Size(823, 644);
+            this.studioTheme1.Size = new System.Drawing.Size(1123, 544);
             this.studioTheme1.SmartBounds = true;
             this.studioTheme1.TabIndex = 0;
             this.studioTheme1.Text = "studioTheme1";
             this.studioTheme1.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.studioTheme1.Click += new System.EventHandler(this.studioTheme1_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.richTextBox1.Location = new System.Drawing.Point(301, 272);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(494, 179);
+            this.richTextBox1.TabIndex = 11;
+            this.richTextBox1.Text = "Description";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 14F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(295, 186);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 34);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "My Rating:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 14F);
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(399, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(249, 34);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "User Rating: ?/5";
             // 
             // star5
             // 
@@ -360,33 +421,113 @@
             this.star1.UseVisualStyleBackColor = false;
             this.star1.Click += new System.EventHandler(this.star1_Click);
             // 
-            // label1
+            // textBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 14F);
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(399, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 34);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "User Rating: ?/5";
+            this.textBox2.Location = new System.Drawing.Point(190, 479);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(613, 27);
+            this.textBox2.TabIndex = 12;
             // 
-            // label2
+            // studioButton3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 14F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(295, 186);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 34);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "My Rating:";
+            this.studioButton3.BackColor = System.Drawing.Color.Transparent;
+            bloom39.Name = "DownGradient1";
+            bloom39.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
+            bloom40.Name = "DownGradient2";
+            bloom40.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
+            bloom41.Name = "NoneGradient1";
+            bloom41.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
+            bloom42.Name = "NoneGradient2";
+            bloom42.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
+            bloom43.Name = "Shine1";
+            bloom43.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom44.Name = "Shine2A";
+            bloom44.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom45.Name = "Shine2B";
+            bloom45.Value = System.Drawing.Color.Transparent;
+            bloom46.Name = "Shine3";
+            bloom46.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom47.Name = "TextShade";
+            bloom47.Value = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            bloom48.Name = "Text";
+            bloom48.Value = System.Drawing.Color.White;
+            bloom49.Name = "Glow";
+            bloom49.Value = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom50.Name = "Border";
+            bloom50.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            bloom51.Name = "Corners";
+            bloom51.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.studioButton3.Colors = new Bloom[] {
+        bloom39,
+        bloom40,
+        bloom41,
+        bloom42,
+        bloom43,
+        bloom44,
+        bloom45,
+        bloom46,
+        bloom47,
+        bloom48,
+        bloom49,
+        bloom50,
+        bloom51};
+            this.studioButton3.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
+            this.studioButton3.Font = new System.Drawing.Font("Verdana", 8F);
+            this.studioButton3.Image = null;
+            this.studioButton3.Location = new System.Drawing.Point(49, 479);
+            this.studioButton3.Name = "studioButton3";
+            this.studioButton3.NoRounding = false;
+            this.studioButton3.Size = new System.Drawing.Size(135, 27);
+            this.studioButton3.TabIndex = 13;
+            this.studioButton3.Text = "Post Comment";
+            this.studioButton3.Transparent = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(822, 91);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(274, 424);
+            this.listView1.TabIndex = 14;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(31, 469);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(785, 46);
+            this.panel1.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(278, 91);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(538, 372);
+            this.panel2.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 14F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(51, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 34);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Comments";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(822, 43);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(274, 41);
+            this.panel3.TabIndex = 18;
             // 
             // MovieProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 644);
+            this.ClientSize = new System.Drawing.Size(1123, 544);
             this.Controls.Add(this.studioTheme1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MovieProfile";
@@ -397,6 +538,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.studioTheme1.ResumeLayout(false);
             this.studioTheme1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -414,5 +557,13 @@
         private System.Windows.Forms.Button star1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ListView listView1;
+        private StudioButton studioButton3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
     }
 }

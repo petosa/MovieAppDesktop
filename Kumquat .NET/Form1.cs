@@ -120,7 +120,7 @@ namespace Kumquat.NET
                 richTextBox4.Text != "")
             {
                 MessageBox.Show("Registered!");
-                UserManager.addAccount(richTextBox3.Text, richTextBox4.Text);
+                UserManager.addAccount(richTextBox1.Text, richTextBox2.Text, richTextBox3.Text, richTextBox4.Text);
             } else
             {
                 MessageBox.Show("Some fields were empty. Please fill in all fields.");
