@@ -95,6 +95,7 @@
             Bloom bloom63 = new Bloom();
             Bloom bloom64 = new Bloom();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.studioTheme1 = new StudioTheme();
             this.listView1 = new System.Windows.Forms.ListView();
             this.studioButton4 = new StudioButton();
@@ -117,7 +118,6 @@
             this.noprof = new System.Windows.Forms.Label();
             this.createprof = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.studioTheme1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profpic)).BeginInit();
@@ -128,6 +128,10 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "notfound.png");
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // studioTheme1
             // 
@@ -203,6 +207,7 @@
             this.listView1.Size = new System.Drawing.Size(816, 515);
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
             // 
             // studioButton4
             // 
@@ -561,7 +566,17 @@
             // 
             // profmajor
             // 
+            this.profmajor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.profmajor.FormattingEnabled = true;
+            this.profmajor.Items.AddRange(new object[] {
+            "CS",
+            "EE",
+            "ME",
+            "ISYE",
+            "Math",
+            "Phys",
+            "Chem",
+            "ChemE"});
             this.profmajor.Location = new System.Drawing.Point(20, 305);
             this.profmajor.Name = "profmajor";
             this.profmajor.Size = new System.Drawing.Size(256, 26);
@@ -596,10 +611,6 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Find Movies";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Dashboard
             // 

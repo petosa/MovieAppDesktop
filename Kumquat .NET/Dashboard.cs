@@ -46,6 +46,7 @@ namespace Kumquat.NET
             mydescription.Visible = true;
             profmajor.Visible = true;
             profdesc.Visible = true;
+            saveprof.Visible = true;
         }
 
         private void doSearch2(object sender, KeyEventArgs e)
@@ -111,7 +112,7 @@ namespace Kumquat.NET
                                 lvi.ImageKey = "notfound.png";
                             }
                             //Generate ListViewItem
-                            lvi.Text = titles[i] + " (" + years[i] + ")";
+                            lvi.Text = titles[i] + " (" + years[i] + ") RATING/5";
                             listView1.Items.Add(lvi);
 
                             //Flop
@@ -120,6 +121,14 @@ namespace Kumquat.NET
                     }
                 }
             }
+        }
+
+        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            String data = e.Item.Text;
+            Image img = imageList1.Images[e.Item.ImageKey];
+            MovieProfile mp = new MovieProfile(data, img);
+            mp.Show();
         }
     }
 }
