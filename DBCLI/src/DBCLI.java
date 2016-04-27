@@ -1,4 +1,5 @@
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Semaphore;
 
 public class DBCLI {
 
@@ -27,6 +29,8 @@ public class DBCLI {
     private static PrintWriter LOG_PW;
     private static final DateFormat LOG_DATE_FORMAT =
             new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+
+    private static final Semaphore sem = new Semaphore(0);
 
     public static void main(String[] args) {
         // Initialize logging
@@ -72,7 +76,19 @@ public class DBCLI {
                     mongoose.put("status", status);
                     mongoose.put("username", username);
 
-                    USER_TABLE.child(username).setValue(mongoose);
+                    USER_TABLE.child(username).setValue(mongoose, new Firebase.CompletionListener() {
+                        @Override
+                        public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+                            sem.release();
+                            System.exit(0);
+                        }
+                    });
+
+                    try {
+                        sem.acquire();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 } break; case "addNewMovie": {
                     if (args.length < 4) {
                         printArgError(args);
@@ -87,7 +103,19 @@ public class DBCLI {
                     mongoose.put("imgURL", imgURL);
                     mongoose.put("title", title);
 
-                    MOVIE_TABLE.child(title).setValue(mongoose);
+                    MOVIE_TABLE.child(title).setValue(mongoose, new Firebase.CompletionListener() {
+                        @Override
+                        public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+                            sem.release();
+                            System.exit(0);
+                        }
+                    });
+
+                    try {
+                        sem.acquire();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 } break; case "addRating": {
                     if (args.length < 6) {
                         printArgError(args);
@@ -110,7 +138,19 @@ public class DBCLI {
                     Firebase tempRef = MOVIE_TABLE.child(title);
 
                     tempRef.updateChildren(mongoose2);
-                    tempRef.child("ratings").push().setValue(mongoose);
+                    tempRef.child("ratings").push().setValue(mongoose, new Firebase.CompletionListener() {
+                        @Override
+                        public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+                            sem.release();
+                            System.exit(0);
+                        }
+                    });
+
+                    try {
+                        sem.acquire();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 } break; case "uset": {
                     if (args.length < 4) {
                         printArgError(args);
@@ -123,7 +163,19 @@ public class DBCLI {
                     Map<String, Object> mongoose = new HashMap<>();
                     mongoose.put(field, value);
 
-                    DATABASE.child(path).updateChildren(mongoose);
+                    DATABASE.child(path).updateChildren(mongoose, new Firebase.CompletionListener() {
+                        @Override
+                        public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+                            sem.release();
+                            System.exit(0);
+                        }
+                    });
+
+                    try {
+                        sem.acquire();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 } break; default: {
                     Date date = new Date();
                     StringBuffer temp = new StringBuffer();
