@@ -72,9 +72,26 @@ namespace Kumquat.NET
                         MessageBox.Show("Search terms must be at least 2 characters long.");
                     } else
                     {
-                        MessageBox.Show(Utils.getAspect(htmlCode,"Title")[0]);
-                        MessageBox.Show(Utils.getAspect(htmlCode, "Year")[0]);
-
+                        List<String> titles = Utils.getAspect(htmlCode, "Title");
+                        List<String> years = Utils.getAspect(htmlCode, "Year");
+                        List<String> posters = Utils.getAspect(htmlCode, "Poster");
+                        for (int i = 0; i < titles.Count; i++)
+                        {
+                            ListViewItem lvi = new ListViewItem();
+                            try {
+                                WebRequest requestPic = WebRequest.Create(posters[i]);
+                                WebResponse responsePic = requestPic.GetResponse();
+                                Image webImage = Image.FromStream(responsePic.GetResponseStream());
+                                imageList1.Images.Add(posters[i], webImage);
+                                lvi.ImageKey = posters[i];
+                            }
+                            catch
+                            {
+                                lvi.ImageKey = "0";
+                            }
+                            lvi.Text = titles[i] + " (" + years[i] + ")";
+                            listView1.Items.Add(lvi);
+                        }
                     }
                 }
                 }        
