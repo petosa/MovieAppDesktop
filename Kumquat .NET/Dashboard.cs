@@ -72,6 +72,8 @@ namespace Kumquat.NET
                         MessageBox.Show("Search terms must be at least 2 characters long.");
                     } else
                     {
+                        listView1.Items.Clear();
+                        backgroundWorker1.RunWorkerAsync();
                         List<String> titles = Utils.getAspect(htmlCode, "Title");
                         List<String> years = Utils.getAspect(htmlCode, "Year");
                         List<String> posters = Utils.getAspect(htmlCode, "Poster");
@@ -87,7 +89,7 @@ namespace Kumquat.NET
                             }
                             catch
                             {
-                                lvi.ImageKey = "0";
+                                lvi.ImageKey = "notfound.png";
                             }
                             lvi.Text = titles[i] + " (" + years[i] + ")";
                             listView1.Items.Add(lvi);
@@ -97,6 +99,19 @@ namespace Kumquat.NET
                 }        
         }
 
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            ListViewItem abg = new ListViewItem("cowbell");
 
+
+            if (listView1.InvokeRequired)
+                listView1.Invoke(new MethodInvoker(delegate
+                {
+                    listView1.Items.Add(abg);
+
+                }));
+            else
+                listView1.Items.Add(abg);
+        }
     }
 }

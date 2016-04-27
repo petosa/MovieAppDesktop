@@ -20,7 +20,7 @@ namespace Kumquat.NET {
         public static void setCurrentUser(User u) { currentUser = u; }
 
         public static String getDigest(String password) {
-
+            return password;
         }
     }
 }
