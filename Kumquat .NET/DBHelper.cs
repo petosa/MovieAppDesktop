@@ -104,12 +104,6 @@ namespace Kumquat.NET {
                 int descEnd = s.IndexOf("\")d;|");
                 String desc = s.Substring(descStart, descEnd - descStart);
 
-                Console.WriteLine(name);
-                Console.WriteLine(email);
-                Console.WriteLine(username);
-                Console.WriteLine(password);
-                Console.WriteLine(status);
-
                 if (allUsers.ContainsKey(username)) {
                     User u = allUsers[username];
 
