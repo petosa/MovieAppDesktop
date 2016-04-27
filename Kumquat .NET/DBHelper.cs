@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -52,6 +53,110 @@ namespace Kumquat.NET {
 
         public static void runDBCLI(String param) {
             runCommand("javaw.exe", "-jar DBCLI.jar " + param);
+        }
+
+        public static String[] tsReadAllLines(String path) {
+            try {
+                using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (var sr = new StreamReader(csv)) {
+                    List<string> file = new List<string>();
+                    while (!sr.EndOfStream) {
+                        file.Add(sr.ReadLine());
+                    }
+
+                    return file.ToArray();
+                }
+            } catch (IOException e) {
+                System.Threading.Thread.Sleep(500);
+                return tsReadAllLines(path);
+            }
+        }
+
+        public static void parseUsers() {
+            String[] lines = tsReadAllLines("users.csv");
+
+            foreach (String s in lines) {
+                int nameStart = s.IndexOf("@n(\"") + 4;
+                int nameEnd = s.IndexOf("\")n;|");
+                String name = s.Substring(nameStart, nameEnd - nameStart);
+
+                int emailStart = s.IndexOf("@e(\"") + 4;
+                int emailEnd = s.IndexOf("\")e;|");
+                String email = s.Substring(emailStart, emailEnd - emailStart);
+
+                int usernameStart = s.IndexOf("@u(\"") + 4;
+                int usernameEnd = s.IndexOf("\")u;|");
+                String username = s.Substring(usernameStart, usernameEnd - usernameStart);
+
+                int passwordStart = s.IndexOf("@p(\"") + 4;
+                int passwordEnd = s.IndexOf("\")p;|");
+                String password = s.Substring(passwordStart, passwordEnd - passwordStart);
+
+                int statusStart = s.IndexOf("@s(\"") + 4;
+                int statusEnd = s.IndexOf("\")s;|");
+                String status = s.Substring(statusStart, statusEnd - statusStart);
+
+                int majorStart = s.IndexOf("@m(\"") + 4;
+                int majorEnd = s.IndexOf("\")m;|");
+                String major = s.Substring(majorStart, majorEnd - majorStart);
+
+                int descStart = s.IndexOf("@d(\"") + 4;
+                int descEnd = s.IndexOf("\")d;|");
+                String desc = s.Substring(descStart, descEnd - descStart);
+
+                Console.WriteLine(name);
+                Console.WriteLine(email);
+                Console.WriteLine(username);
+                Console.WriteLine(password);
+                Console.WriteLine(status);
+
+                if (allUsers.ContainsKey(username)) {
+                    User u = allUsers[username];
+
+                    if (!name.Equals(u.getName())) {
+                        allUsers[username].setName(name);
+                    }
+
+                    if (!email.Equals(u.getEmail())) {
+                        allUsers[username].setEmail(email);
+                    }
+
+                    if (!password.Equals(u.getPasswordHash())) {
+                        allUsers[username].setPasswordHash(password);
+                    }
+
+                    if (!status.Equals(u.getStatus())) {
+                        allUsers[username].setStatus(status);
+                    }
+
+                    if (allUsers[username].getProfile() == null) {
+                        if (!"".Equals(major) && !"".Equals(desc)) {
+                            u.setProfile(new Profile(major, desc));
+                        }
+                    } else {
+                        if (!major.Equals(u.getProfile().getMajor())) {
+                            allUsers[username].getProfile().setMajor(major);
+                        }
+
+                        if (!desc.Equals(u.getProfile().getDesc())) {
+                            allUsers[username].getProfile().setDesc(desc);
+                        }
+                    }
+                } else {
+                    User u = new User(name, email, username, password);
+                    u.setStatus(status);
+
+                    if (!"".Equals(major) && !"".Equals(desc)) {
+                        u.setProfile(new Profile(major, desc));
+                    }
+
+                    allUsers.Add(username, u);
+                }
+            }
+        }
+
+        public static void parseMovies() {
+            String[] lines = tsReadAllLines("movies.csv");
         }
 
         public static List<User> getAllUsers() { return allUsers.Values.ToList(); }

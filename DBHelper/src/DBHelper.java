@@ -79,7 +79,7 @@ public class DBHelper {
                     USERS_PW.print("\")p;|");
                     USERS_PW.print("@s(\"");
                     USERS_PW.print(status);
-                    USERS_PW.print("\");|");
+                    USERS_PW.print("\")s;|");
                     USERS_PW.print("@m(\"");
                     USERS_PW.print(major);
                     USERS_PW.print("\")m;|");
