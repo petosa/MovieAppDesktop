@@ -464,7 +464,7 @@
             this.richTextBox4.Multiline = false;
             this.richTextBox4.Name = "richTextBox4";
             this.richTextBox4.Size = new System.Drawing.Size(324, 66);
-            this.richTextBox4.TabIndex = 6;
+            this.richTextBox4.TabIndex = 3;
             this.richTextBox4.Text = "";
             this.richTextBox4.Visible = false;
             // 
@@ -536,7 +536,7 @@
             this.richTextBox3.Multiline = false;
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.Size = new System.Drawing.Size(324, 66);
-            this.richTextBox3.TabIndex = 5;
+            this.richTextBox3.TabIndex = 2;
             this.richTextBox3.Text = "";
             this.richTextBox3.Visible = false;
             // 
@@ -552,7 +552,7 @@
             this.richTextBox2.Multiline = false;
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(324, 66);
-            this.richTextBox2.TabIndex = 4;
+            this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
             this.richTextBox2.Visible = false;
             // 
@@ -579,7 +579,7 @@
             this.richTextBox1.Multiline = false;
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(324, 66);
-            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.Visible = false;
             // 

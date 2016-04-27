@@ -121,6 +121,9 @@ namespace Kumquat.NET
             {
                 MessageBox.Show("Registered!");
                 UserManager.addAccount(richTextBox1.Text, richTextBox2.Text, richTextBox3.Text, richTextBox4.Text);
+                Dashboard d = new Dashboard();
+                d.Show();
+                this.Hide();
             } else
             {
                 MessageBox.Show("Some fields were empty. Please fill in all fields.");
