@@ -196,5 +196,33 @@ namespace Kumquat.NET {
         public static String getStatus(String username) {
             return allUsers[username].getStatus();
         }
+
+        public static List<Movie> getAllMovies() { return allMovies.Values.ToList(); }
+
+        public static Boolean isMovie(String title) {
+            return allMovies.ContainsKey(title);
+        }
+
+        public static Boolean addNewMovie(Movie m) {
+            StringBuilder sb = new StringBuilder();
+
+            return false;
+        }
+
+        public static Movie getMovie(String title) {
+            return allMovies[title];
+        }
+
+        public static void addRating(Movie m, Rating r) {
+            
+        }
+
+        public static void updateAverageRating(Movie m, float f) {
+
+        }
+
+        public static List<Rating> getAllRatings(Movie m) {
+            return m.getRatings();
+        }
     }
 }
