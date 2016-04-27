@@ -205,8 +205,21 @@ namespace Kumquat.NET {
 
         public static Boolean addNewMovie(Movie m) {
             StringBuilder sb = new StringBuilder();
+            sb.Append("\"addNewMovie\" ");
+            sb.Append("\"");
+            sb.Append(m.getAverageRating());
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(m.getURL());
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(m.getTitle());
+            sb.Append("\"");
 
-            return false;
+            runDBCLI(sb.ToString());
+
+            allMovies.Add(m.getTitle(), m);
+            return allMovies.ContainsKey(m.getTitle());
         }
 
         public static Movie getMovie(String title) {
@@ -214,11 +227,27 @@ namespace Kumquat.NET {
         }
 
         public static void addRating(Movie m, Rating r) {
-            
-        }
+            m.addRating(r);
 
-        public static void updateAverageRating(Movie m, float f) {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("\"addRating\" ");
+            sb.Append("\"");
+            sb.Append(m.getTitle());
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(m.getAverageRating());
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(r.getComment());
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(r.getRating());
+            sb.Append("\" ");
+            sb.Append("\"");
+            sb.Append(r.getPoster().getUsername());
+            sb.Append("\"");
 
+            runDBCLI(sb.ToString());
         }
 
         public static List<Rating> getAllRatings(Movie m) {
