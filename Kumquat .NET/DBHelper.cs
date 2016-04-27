@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,7 +21,17 @@ namespace Kumquat.NET {
         public static void setCurrentUser(User u) { currentUser = u; }
 
         public static String getDigest(String password) {
-            return password;
+            SHA256 sha256 = SHA256Managed.Create();
+            byte[] key = System.Text.Encoding.Default.GetBytes(password);
+            byte[] hash = sha256.ComputeHash(key);
+
+            StringBuilder sb = new StringBuilder(hash.Length * 2);
+
+            foreach (byte b in hash) {
+                sb.Append(Convert.ToInt32(b).ToString("X2"));
+            }
+
+            return sb.ToString();
         }
     }
 }
