@@ -205,7 +205,18 @@ namespace Kumquat.NET
                 return;
             }
             List<Movie> ml = DBHelper.getAllMovies();
-            ml.Sort(Movie.OtherComparison);
+
+            ml.Sort(delegate (Movie object1, Movie object2) {
+                String maj = DBHelper.getCurrentUser().getProfile().getMajor();
+                if (object1.getAverageMajorRating(maj) > object2.getAverageMajorRating(maj)) {
+                    return -1;
+                } else if (object1.getAverageMajorRating(maj) == object2.getAverageMajorRating(maj)) {
+                    return 0;
+                } else {
+                    return 1;
+                }
+            });
+
             listView1.Clear();
             for (int i = 0; i < ml.Count; i++)
             {
