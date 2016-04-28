@@ -19,6 +19,7 @@ namespace Kumquat.NET
         public Dashboard()
         {
             InitializeComponent();
+            profmajor.SelectedIndex = 0;
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             if(DBHelper.getCurrentUser().getProfile() != null)
@@ -26,12 +27,6 @@ namespace Kumquat.NET
                 createprof_Click(null, null);
             }
         }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void studioButton4_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -131,16 +126,24 @@ namespace Kumquat.NET
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            String data = e.Item.Text;
-            Image img = imageList1.Images[e.Item.ImageKey];
-            MovieProfile mp = new MovieProfile(e.Item, data, img);
-            mp.Show();
+            if (e.Item.Selected == true)
+            {
+                String data = e.Item.Text;
+                Image img = imageList1.Images[e.Item.ImageKey];
+                MovieProfile mp = new MovieProfile(e.Item, data, img);
+                mp.Show();
+            }
         }
 
         private void saveprof_Click(object sender, EventArgs e)
         {
             Profile p = new Profile(profmajor.Text, profdesc.Text);
             DBHelper.getCurrentUser().setProfile(p);
+        }
+
+        private void studioButton5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

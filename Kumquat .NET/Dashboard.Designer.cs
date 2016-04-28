@@ -94,9 +94,23 @@
             Bloom bloom62 = new Bloom();
             Bloom bloom63 = new Bloom();
             Bloom bloom64 = new Bloom();
+            Bloom bloom65 = new Bloom();
+            Bloom bloom66 = new Bloom();
+            Bloom bloom67 = new Bloom();
+            Bloom bloom68 = new Bloom();
+            Bloom bloom69 = new Bloom();
+            Bloom bloom70 = new Bloom();
+            Bloom bloom71 = new Bloom();
+            Bloom bloom72 = new Bloom();
+            Bloom bloom73 = new Bloom();
+            Bloom bloom74 = new Bloom();
+            Bloom bloom75 = new Bloom();
+            Bloom bloom76 = new Bloom();
+            Bloom bloom77 = new Bloom();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.studioTheme1 = new StudioTheme();
+            this.studioButton5 = new StudioButton();
             this.listView1 = new System.Windows.Forms.ListView();
             this.studioButton4 = new StudioButton();
             this.studioButton3 = new StudioButton();
@@ -104,7 +118,6 @@
             this.studioButton1 = new StudioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.searchbox = new System.Windows.Forms.RichTextBox();
-            this.exit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.profemail = new System.Windows.Forms.Label();
             this.profname = new System.Windows.Forms.Label();
@@ -174,6 +187,7 @@
         bloom10,
         bloom11,
         bloom12};
+            this.studioTheme1.Controls.Add(this.studioButton5);
             this.studioTheme1.Controls.Add(this.listView1);
             this.studioTheme1.Controls.Add(this.studioButton4);
             this.studioTheme1.Controls.Add(this.studioButton3);
@@ -181,7 +195,6 @@
             this.studioTheme1.Controls.Add(this.studioButton1);
             this.studioTheme1.Controls.Add(this.label2);
             this.studioTheme1.Controls.Add(this.searchbox);
-            this.studioTheme1.Controls.Add(this.exit);
             this.studioTheme1.Controls.Add(this.groupBox1);
             this.studioTheme1.Controls.Add(this.groupBox2);
             this.studioTheme1.Customization = "ZEYy/3NVQf9kRjL/RigU/1o8KP8AAAAP////AD4gDP8AAAAU////HgAAAP//////";
@@ -199,19 +212,9 @@
             this.studioTheme1.Text = "Movie Recommender | Dashboard";
             this.studioTheme1.TransparencyKey = System.Drawing.Color.Fuchsia;
             // 
-            // listView1
+            // studioButton5
             // 
-            this.listView1.LargeImageList = this.imageList1;
-            this.listView1.Location = new System.Drawing.Point(317, 177);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(816, 515);
-            this.listView1.TabIndex = 9;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
-            // 
-            // studioButton4
-            // 
-            this.studioButton4.BackColor = System.Drawing.Color.Transparent;
+            this.studioButton5.BackColor = System.Drawing.Color.Transparent;
             bloom13.Name = "DownGradient1";
             bloom13.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
             bloom14.Name = "DownGradient2";
@@ -238,7 +241,7 @@
             bloom24.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             bloom25.Name = "Corners";
             bloom25.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.studioButton4.Colors = new Bloom[] {
+            this.studioButton5.Colors = new Bloom[] {
         bloom13,
         bloom14,
         bloom15,
@@ -252,21 +255,31 @@
         bloom23,
         bloom24,
         bloom25};
-            this.studioButton4.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
-            this.studioButton4.Font = new System.Drawing.Font("Verdana", 8F);
-            this.studioButton4.Image = null;
-            this.studioButton4.Location = new System.Drawing.Point(997, 3);
-            this.studioButton4.Name = "studioButton4";
-            this.studioButton4.NoRounding = false;
-            this.studioButton4.Size = new System.Drawing.Size(75, 23);
-            this.studioButton4.TabIndex = 8;
-            this.studioButton4.Text = "Log Out";
-            this.studioButton4.Transparent = true;
-            this.studioButton4.Click += new System.EventHandler(this.studioButton4_Click);
+            this.studioButton5.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
+            this.studioButton5.Font = new System.Drawing.Font("Verdana", 8F);
+            this.studioButton5.Image = null;
+            this.studioButton5.Location = new System.Drawing.Point(1076, 3);
+            this.studioButton5.Name = "studioButton5";
+            this.studioButton5.NoRounding = false;
+            this.studioButton5.Size = new System.Drawing.Size(75, 23);
+            this.studioButton5.TabIndex = 10;
+            this.studioButton5.Text = "X";
+            this.studioButton5.Transparent = true;
+            this.studioButton5.Click += new System.EventHandler(this.studioButton5_Click);
             // 
-            // studioButton3
+            // listView1
             // 
-            this.studioButton3.BackColor = System.Drawing.Color.Transparent;
+            this.listView1.LargeImageList = this.imageList1;
+            this.listView1.Location = new System.Drawing.Point(317, 177);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(816, 515);
+            this.listView1.TabIndex = 9;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
+            // 
+            // studioButton4
+            // 
+            this.studioButton4.BackColor = System.Drawing.Color.Transparent;
             bloom26.Name = "DownGradient1";
             bloom26.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
             bloom27.Name = "DownGradient2";
@@ -293,7 +306,7 @@
             bloom37.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             bloom38.Name = "Corners";
             bloom38.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.studioButton3.Colors = new Bloom[] {
+            this.studioButton4.Colors = new Bloom[] {
         bloom26,
         bloom27,
         bloom28,
@@ -307,20 +320,21 @@
         bloom36,
         bloom37,
         bloom38};
-            this.studioButton3.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
-            this.studioButton3.Font = new System.Drawing.Font("Verdana", 8F);
-            this.studioButton3.Image = null;
-            this.studioButton3.Location = new System.Drawing.Point(727, 108);
-            this.studioButton3.Name = "studioButton3";
-            this.studioButton3.NoRounding = false;
-            this.studioButton3.Size = new System.Drawing.Size(408, 52);
-            this.studioButton3.TabIndex = 6;
-            this.studioButton3.Text = "Major Recommendations";
-            this.studioButton3.Transparent = true;
+            this.studioButton4.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
+            this.studioButton4.Font = new System.Drawing.Font("Verdana", 8F);
+            this.studioButton4.Image = null;
+            this.studioButton4.Location = new System.Drawing.Point(996, 3);
+            this.studioButton4.Name = "studioButton4";
+            this.studioButton4.NoRounding = false;
+            this.studioButton4.Size = new System.Drawing.Size(75, 23);
+            this.studioButton4.TabIndex = 8;
+            this.studioButton4.Text = "Log Out";
+            this.studioButton4.Transparent = true;
+            this.studioButton4.Click += new System.EventHandler(this.studioButton4_Click);
             // 
-            // studioButton2
+            // studioButton3
             // 
-            this.studioButton2.BackColor = System.Drawing.Color.Transparent;
+            this.studioButton3.BackColor = System.Drawing.Color.Transparent;
             bloom39.Name = "DownGradient1";
             bloom39.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
             bloom40.Name = "DownGradient2";
@@ -347,7 +361,7 @@
             bloom50.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             bloom51.Name = "Corners";
             bloom51.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.studioButton2.Colors = new Bloom[] {
+            this.studioButton3.Colors = new Bloom[] {
         bloom39,
         bloom40,
         bloom41,
@@ -361,20 +375,20 @@
         bloom49,
         bloom50,
         bloom51};
-            this.studioButton2.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
-            this.studioButton2.Font = new System.Drawing.Font("Verdana", 8F);
-            this.studioButton2.Image = null;
-            this.studioButton2.Location = new System.Drawing.Point(317, 108);
-            this.studioButton2.Name = "studioButton2";
-            this.studioButton2.NoRounding = false;
-            this.studioButton2.Size = new System.Drawing.Size(407, 52);
-            this.studioButton2.TabIndex = 5;
-            this.studioButton2.Text = "Top Rated";
-            this.studioButton2.Transparent = true;
+            this.studioButton3.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
+            this.studioButton3.Font = new System.Drawing.Font("Verdana", 8F);
+            this.studioButton3.Image = null;
+            this.studioButton3.Location = new System.Drawing.Point(727, 108);
+            this.studioButton3.Name = "studioButton3";
+            this.studioButton3.NoRounding = false;
+            this.studioButton3.Size = new System.Drawing.Size(408, 52);
+            this.studioButton3.TabIndex = 6;
+            this.studioButton3.Text = "Major Recommendations";
+            this.studioButton3.Transparent = true;
             // 
-            // studioButton1
+            // studioButton2
             // 
-            this.studioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.studioButton2.BackColor = System.Drawing.Color.Transparent;
             bloom52.Name = "DownGradient1";
             bloom52.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
             bloom53.Name = "DownGradient2";
@@ -401,7 +415,7 @@
             bloom63.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             bloom64.Name = "Corners";
             bloom64.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.studioButton1.Colors = new Bloom[] {
+            this.studioButton2.Colors = new Bloom[] {
         bloom52,
         bloom53,
         bloom54,
@@ -415,6 +429,60 @@
         bloom62,
         bloom63,
         bloom64};
+            this.studioButton2.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
+            this.studioButton2.Font = new System.Drawing.Font("Verdana", 8F);
+            this.studioButton2.Image = null;
+            this.studioButton2.Location = new System.Drawing.Point(317, 108);
+            this.studioButton2.Name = "studioButton2";
+            this.studioButton2.NoRounding = false;
+            this.studioButton2.Size = new System.Drawing.Size(407, 52);
+            this.studioButton2.TabIndex = 5;
+            this.studioButton2.Text = "Top Rated";
+            this.studioButton2.Transparent = true;
+            // 
+            // studioButton1
+            // 
+            this.studioButton1.BackColor = System.Drawing.Color.Transparent;
+            bloom65.Name = "DownGradient1";
+            bloom65.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
+            bloom66.Name = "DownGradient2";
+            bloom66.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
+            bloom67.Name = "NoneGradient1";
+            bloom67.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
+            bloom68.Name = "NoneGradient2";
+            bloom68.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
+            bloom69.Name = "Shine1";
+            bloom69.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom70.Name = "Shine2A";
+            bloom70.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom71.Name = "Shine2B";
+            bloom71.Value = System.Drawing.Color.Transparent;
+            bloom72.Name = "Shine3";
+            bloom72.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom73.Name = "TextShade";
+            bloom73.Value = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            bloom74.Name = "Text";
+            bloom74.Value = System.Drawing.Color.White;
+            bloom75.Name = "Glow";
+            bloom75.Value = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom76.Name = "Border";
+            bloom76.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            bloom77.Name = "Corners";
+            bloom77.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.studioButton1.Colors = new Bloom[] {
+        bloom65,
+        bloom66,
+        bloom67,
+        bloom68,
+        bloom69,
+        bloom70,
+        bloom71,
+        bloom72,
+        bloom73,
+        bloom74,
+        bloom75,
+        bloom76,
+        bloom77};
             this.studioButton1.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
             this.studioButton1.Font = new System.Drawing.Font("Verdana", 8F);
             this.studioButton1.Image = null;
@@ -449,18 +517,6 @@
             this.searchbox.TabIndex = 2;
             this.searchbox.Text = "";
             this.searchbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.doSearch2);
-            // 
-            // exit
-            // 
-            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.exit.Location = new System.Drawing.Point(1078, 2);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(75, 26);
-            this.exit.TabIndex = 1;
-            this.exit.Text = "X";
-            this.exit.UseVisualStyleBackColor = true;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // groupBox1
             // 
@@ -638,7 +694,6 @@
         private System.Windows.Forms.Label noprof;
         private System.Windows.Forms.Button createprof;
         private StudioTheme studioTheme1;
-        private System.Windows.Forms.Button exit;
         private StudioButton studioButton3;
         private StudioButton studioButton2;
         private StudioButton studioButton1;
@@ -658,5 +713,6 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Timer timer1;
+        private StudioButton studioButton5;
     }
 }
