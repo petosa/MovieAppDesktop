@@ -18,7 +18,8 @@ namespace Kumquat.NET {
 
         public static User getCurrentUser() { return currentUser; }
         public static Dictionary<String, User> getUsersMap() { return allUsers; }
-        public static Dictionary<String, Movie> getMoviesMap() { return allMovies; }
+        public static Dictionary<String, Movie> getMoviesMap()
+        { return allMovies; }
 
         public static void setCurrentUser(User u) { currentUser = u; }
 
@@ -185,7 +186,7 @@ namespace Kumquat.NET {
                     List<Rating> rs = new List<Rating>();
 
                     int lastRatingIndex = ratingsStart + 6;
-
+                    rs.Clear();
                     while (lastRatingIndex < ratingsEnd) {
                         int currentRatingEnd = s.IndexOf("\")rtg;|", lastRatingIndex);
                         String currentRating = s.Substring(lastRatingIndex, currentRatingEnd - lastRatingIndex);

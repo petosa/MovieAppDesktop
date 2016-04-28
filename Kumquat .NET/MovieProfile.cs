@@ -32,7 +32,7 @@ namespace Kumquat.NET
                 mov = md[title];
                 rate.Text = "Rating: " + mov.getAverageRating().ToString() + "/5";
                 List<Rating> l = mov.getRatings();
-                MessageBox.Show("HEEE");
+                MessageBox.Show(l.Count.ToString());
                 for (int i = 0; i < l.Count; i++)
                     listView1.Items.Add(l[i].getPoster().getUsername() + " [" + l[i].getRating() + "/5] : " + l[i].getComment());
             }
