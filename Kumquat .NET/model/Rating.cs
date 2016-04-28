@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Kumquat.NET.model {
-    class Rating {
+    class Rating : IEquatable<Rating> {
         private readonly float rating;
         private readonly String comment;
         private readonly User poster;
@@ -25,6 +25,10 @@ namespace Kumquat.NET.model {
             toMap.Add("user", poster.getUsername());
 
             return toMap;
+        }
+
+        public bool Equals(Rating other) {
+            return other.getRating().Equals(rating) && other.getComment().Equals(comment) && other.getPoster().getUsername().Equals(poster.getUsername());
         }
     }
 }

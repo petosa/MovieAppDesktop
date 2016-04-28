@@ -194,7 +194,10 @@ namespace Kumquat.NET {
                         lastRatingIndex = currentRatingEnd + 13;
                     }
 
+                    Console.WriteLine(rs.Count());
+
                     if (allMovies.ContainsKey(title)) {
+                        Console.WriteLine("not this logic");
                         if (!allMovies[title].getURL().Equals(imgURL)) {
                             allMovies[title].setURL(imgURL);
                         }
@@ -209,6 +212,7 @@ namespace Kumquat.NET {
                             }
                         }
                     } else {
+                        Console.WriteLine("this logic");
                         Movie m = new Movie(title);
                         m.setAverageRating(ar);
                         m.setURL(imgURL);
@@ -242,7 +246,7 @@ namespace Kumquat.NET {
         public static List<User> getAllUsers() { return allUsers.Values.ToList(); }
 
         public static Boolean isUser(String username) {
-            return allMovies.ContainsKey(username);
+            return allUsers.ContainsKey(username);
         }
 
         public static Boolean addUser(User u) {
