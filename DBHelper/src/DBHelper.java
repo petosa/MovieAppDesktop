@@ -126,10 +126,10 @@ public class DBHelper {
                     MOVIES_PW.print("\")i;|");
                     MOVIES_PW.print("@ar(\"");
                     MOVIES_PW.print(averageRating);
-                    MOVIES_PW.print("\")ar;|");
-                    MOVIES_PW.print("@rtgs(\"");
 
                     if (postSnapshot.hasChild("ratings")) {
+                        MOVIES_PW.print("\")ar;|");
+                        MOVIES_PW.print("@rtgs(\"");
                         for (DataSnapshot post2 : postSnapshot.child("ratings").getChildren()) {
                             String comment = post2.child("comment").getValue(String.class);
                             float rating = post2.child("rating").getValue(Float.class);
@@ -147,9 +147,10 @@ public class DBHelper {
                             MOVIES_PW.print("\")p;|");
                             MOVIES_PW.print("\")rtg;|");
                         }
+                        MOVIES_PW.println("\")rtgs;|");
+                    } else {
+                        MOVIES_PW.println("\")ar;|");
                     }
-
-                    MOVIES_PW.println("\")rtgs;|");
                 }
 
                 MOVIES_PW.close();
