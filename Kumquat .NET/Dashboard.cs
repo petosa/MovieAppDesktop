@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kumquat.NET.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,10 @@ namespace Kumquat.NET
             InitializeComponent();
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+            if(DBHelper.getCurrentUser().getProfile() != null)
+            {
+                createprof_Click(null, null);
+            }
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -130,6 +135,12 @@ namespace Kumquat.NET
             Image img = imageList1.Images[e.Item.ImageKey];
             MovieProfile mp = new MovieProfile(e.Item, data, img);
             mp.Show();
+        }
+
+        private void saveprof_Click(object sender, EventArgs e)
+        {
+            Profile p = new Profile(profmajor.Text, profdesc.Text);
+            DBHelper.getCurrentUser().setProfile(p);
         }
     }
 }
