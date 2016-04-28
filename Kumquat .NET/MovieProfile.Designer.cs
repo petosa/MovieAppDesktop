@@ -84,6 +84,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.studioTheme1 = new StudioTheme();
+            this.listView1 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.studioButton3 = new StudioButton();
@@ -97,7 +98,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rate = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.studioTheme1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -307,6 +307,15 @@
             this.studioTheme1.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.studioTheme1.Click += new System.EventHandler(this.studioTheme1_Click);
             // 
+            // listView1
+            // 
+            this.listView1.FormattingEnabled = true;
+            this.listView1.ItemHeight = 18;
+            this.listView1.Location = new System.Drawing.Point(278, 278);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(538, 184);
+            this.listView1.TabIndex = 19;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -378,6 +387,7 @@
             this.studioButton3.TabIndex = 13;
             this.studioButton3.Text = "Post Review";
             this.studioButton3.Transparent = true;
+            this.studioButton3.Click += new System.EventHandler(this.studioButton3_Click);
             // 
             // textBox2
             // 
@@ -502,15 +512,6 @@
             this.rate.Size = new System.Drawing.Size(174, 34);
             this.rate.TabIndex = 10;
             this.rate.Text = "Rating: ?/5";
-            // 
-            // listView1
-            // 
-            this.listView1.FormattingEnabled = true;
-            this.listView1.ItemHeight = 18;
-            this.listView1.Location = new System.Drawing.Point(278, 278);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(538, 184);
-            this.listView1.TabIndex = 19;
             // 
             // MovieProfile
             // 

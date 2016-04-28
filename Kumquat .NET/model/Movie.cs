@@ -15,6 +15,8 @@ namespace Kumquat.NET.model {
             this.title = title;
             ratings = new List<Rating>();
             majorRatings = new Dictionary<String, List<float>>();
+            averageRating = 0;
+            imgURL = "N/A";
         }
 
         public void addRating(Rating r) {
@@ -70,6 +72,23 @@ namespace Kumquat.NET.model {
                 return 1;
             }
         }
+
+        public static Comparison<Movie> OtherComparison = delegate (Movie object1, Movie object2)
+        {
+            String maj = DBHelper.getCurrentUser().getProfile().getMajor();
+            if (object1.getAverageMajorRating(maj) > object2.getAverageMajorRating(maj))
+            {
+                return -1;
+            }
+            else if (object1.getAverageMajorRating(maj) == object2.getAverageMajorRating(maj))
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+        };
 
         public String toString() {
             return this.title + " : " + this.averageRating;

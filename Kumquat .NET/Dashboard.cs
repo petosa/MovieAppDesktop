@@ -125,7 +125,7 @@ namespace Kumquat.NET
                             }
                             //Generate ListViewItem
                             lvi.Text = titles[i] + " (" + years[i] + ")";
-                            lvi.Tag = titles[i] + "☻" + years[i];
+                            lvi.Tag = titles[i] + "☻ (" + years[i] + ")";
                             listView1.Items.Add(lvi);
                         }
                     }
@@ -144,7 +144,7 @@ namespace Kumquat.NET
             {
                 String data = e.Item.Text;
                 Image img = imageList1.Images[e.Item.ImageKey];
-                MovieProfile mp = new MovieProfile(e.Item, data, img);
+                MovieProfile mp = new MovieProfile(e.Item, data, img, e.Item.ImageKey);
                 mp.Show();
             }
         }
@@ -164,6 +164,73 @@ namespace Kumquat.NET
         {
             DBHelper.quit();
             Application.Exit();
+        }
+
+        private void studioButton2_Click(object sender, EventArgs e)
+        {
+            List<Movie> ml = DBHelper.getAllMovies();
+            ml.Sort();
+            listView1.Clear();
+            for (int i = 0; i < ml.Count; i++)
+            {
+                ListViewItem lvi = new ListViewItem();
+                String tl = ml[i].getTitle();
+                int yi = tl.LastIndexOf(" (") + 1;
+                String year = tl.Substring(yi);
+                String realtitle = tl.Substring(0, yi - 1);
+                lvi.Text = tl;
+                lvi.Tag = realtitle + "☻" + year;
+                if (!ml[i].getURL().Equals("N/A") && !ml[i].getURL().Equals("notfound.png"))
+                {
+                    WebRequest requestPic = WebRequest.Create(ml[i].getURL());
+                    WebResponse responsePic = requestPic.GetResponse();
+                    Image webImage = Image.FromStream(responsePic.GetResponseStream());
+                    imageList1.Images.Add(ml[i].getURL(), webImage);
+                    lvi.ImageKey = ml[i].getURL();
+                }
+                //No poster
+                else
+                {
+                    lvi.ImageKey = "notfound.png";
+                }
+                listView1.Items.Add(lvi);
+            }
+        }
+
+        private void studioButton3_Click(object sender, EventArgs e)
+        {
+            if (DBHelper.getCurrentUser().getProfile() == null)
+            {
+                MessageBox.Show("You must create a profile before getting a recommendation.");
+                return;
+            }
+            List<Movie> ml = DBHelper.getAllMovies();
+            ml.Sort(Movie.OtherComparison);
+            listView1.Clear();
+            for (int i = 0; i < ml.Count; i++)
+            {
+                ListViewItem lvi = new ListViewItem();
+                String tl = ml[i].getTitle();
+                int yi = tl.LastIndexOf(" (") + 1;
+                String year = tl.Substring(yi);
+                String realtitle = tl.Substring(0, yi - 1);
+                lvi.Text = tl;
+                lvi.Tag = realtitle + "☻" + year;
+                if (!ml[i].getURL().Equals("N/A") && !ml[i].getURL().Equals("notfound.png"))
+                {
+                    WebRequest requestPic = WebRequest.Create(ml[i].getURL());
+                    WebResponse responsePic = requestPic.GetResponse();
+                    Image webImage = Image.FromStream(responsePic.GetResponseStream());
+                    imageList1.Images.Add(ml[i].getURL(), webImage);
+                    lvi.ImageKey = ml[i].getURL();
+                }
+                //No poster
+                else
+                {
+                    lvi.ImageKey = "notfound.png";
+                }
+                listView1.Items.Add(lvi);
+            }
         }
     }
 }

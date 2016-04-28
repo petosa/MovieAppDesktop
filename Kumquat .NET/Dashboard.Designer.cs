@@ -144,7 +144,6 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // studioTheme1
@@ -386,6 +385,7 @@
             this.studioButton3.TabIndex = 6;
             this.studioButton3.Text = "Major Recommendations";
             this.studioButton3.Transparent = true;
+            this.studioButton3.Click += new System.EventHandler(this.studioButton3_Click);
             // 
             // studioButton2
             // 
@@ -440,6 +440,7 @@
             this.studioButton2.TabIndex = 5;
             this.studioButton2.Text = "Top Rated";
             this.studioButton2.Transparent = true;
+            this.studioButton2.Click += new System.EventHandler(this.studioButton2_Click);
             // 
             // studioButton1
             // 

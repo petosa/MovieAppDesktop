@@ -14,6 +14,7 @@ namespace Kumquat.NET
 
     public partial class Form1 : Form
     {
+        public Dictionary<String, int> attempts = new Dictionary<String, int>();
         public String page = "main";
         public Form1()
         {
@@ -96,6 +97,16 @@ namespace Kumquat.NET
         {
             Dictionary<String,User> ud = DBHelper.getUsersMap();
             if (ud.ContainsKey(richTextBox1.Text) && ud[richTextBox1.Text].getPasswordHash() == DBHelper.getDigest(richTextBox2.Text)) {
+                if(ud[richTextBox1.Text].getStatus().Equals("Banned"))
+                {
+                    MessageBox.Show("Account is banned.");
+                    return;
+                }
+                if (ud[richTextBox1.Text].getStatus().Equals("Locked"))
+                {
+                    MessageBox.Show("Account is Locked.");
+                    return;
+                }
                 DBHelper.setCurrentUser(ud[richTextBox1.Text]);
                 Dashboard d = new Dashboard();
                 d.Show();
@@ -105,7 +116,23 @@ namespace Kumquat.NET
             {
                 MessageBox.Show("Incorrect password.");
                 richTextBox2.Text = "";
-            } else
+                String un = richTextBox1.Text;
+                if (attempts.ContainsKey(un))
+                {
+                    attempts[un] = attempts[un] + 1;
+                    if(attempts[un] == 3)
+                    {
+                        User u = DBHelper.getUser(un);
+                        u.setStatus("Locked");
+                        DBHelper.setStatus(un, "Locked");
+                        MessageBox.Show("To many tries, this account is now locked.");
+                    }
+                } else
+                {
+                    attempts[un] = 1;
+                }
+            }
+            else
             {
                 MessageBox.Show("Account does not exist.");
                 richTextBox2.Text = "";

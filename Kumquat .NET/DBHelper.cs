@@ -426,6 +426,7 @@ namespace Kumquat.NET {
         }
 
         public static void addRating(Movie m, Rating r) {
+
             m.addRating(r);
 
             StringBuilder sb = new StringBuilder();
