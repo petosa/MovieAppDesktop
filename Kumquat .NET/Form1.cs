@@ -101,8 +101,13 @@ namespace Kumquat.NET
                 d.Show();
                 this.Hide();
             }
-            else{
+            else if (DBHelper.getUsersMap().ContainsKey(richTextBox1.Text))
+            {
                 MessageBox.Show("Incorrect password.");
+                richTextBox2.Text = "";
+            } else
+            {
+                MessageBox.Show("Account does not exist.");
                 richTextBox2.Text = "";
             }
         }
