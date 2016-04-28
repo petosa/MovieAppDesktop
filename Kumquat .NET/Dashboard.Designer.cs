@@ -554,6 +554,7 @@
             this.saveprof.Text = "Save Profile";
             this.saveprof.UseVisualStyleBackColor = true;
             this.saveprof.Visible = false;
+            this.saveprof.Click += new System.EventHandler(this.saveprof_Click);
             // 
             // profdesc
             // 

@@ -297,7 +297,6 @@ namespace Kumquat.NET {
         public static void activateUser(String username) {
             setStatus(username, "Active");
         }
-
         public static void setDescription(String username, String description) {
             allUsers[username].getProfile().setDesc(description);
             StringBuilder sb = new StringBuilder();

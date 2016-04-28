@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kumquat.NET.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,11 +21,11 @@ namespace Kumquat.NET
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
 
             try {
+                User test = new User("a", "a", "a", "a");
+                DBHelper.setCurrentUser(test);
                 UserManager.ub.Add("meme", "base");
-                UserManager.ub.Add("cow", "bell");
-                UserManager.ub.Add("bass", "cannon");
             }
-            catch (Exception e)
+            catch
             {
 
             }
@@ -120,7 +121,8 @@ namespace Kumquat.NET
                 richTextBox4.Text != "")
             {
                 MessageBox.Show("Registered!");
-                UserManager.addAccount(richTextBox1.Text, richTextBox2.Text, richTextBox3.Text, richTextBox4.Text);
+                User us = UserManager.addAccount(richTextBox1.Text, richTextBox2.Text, richTextBox3.Text, richTextBox4.Text);
+                DBHelper.setCurrentUser(us);
                 Dashboard d = new Dashboard();
                 d.Show();
                 this.Hide();
