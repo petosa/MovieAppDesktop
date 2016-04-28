@@ -84,24 +84,23 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.studioTheme1 = new StudioTheme();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.studioButton3 = new StudioButton();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.star5 = new System.Windows.Forms.Button();
             this.star4 = new System.Windows.Forms.Button();
             this.star3 = new System.Windows.Forms.Button();
             this.star2 = new System.Windows.Forms.Button();
             this.star1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.studioButton3 = new StudioButton();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.rate = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.studioTheme1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // studioButton1
@@ -203,7 +202,7 @@
             this.studioButton2.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
             this.studioButton2.Font = new System.Drawing.Font("Verdana", 8F);
             this.studioButton2.Image = null;
-            this.studioButton2.Location = new System.Drawing.Point(1045, 3);
+            this.studioButton2.Location = new System.Drawing.Point(764, 3);
             this.studioButton2.Name = "studioButton2";
             this.studioButton2.NoRounding = false;
             this.studioButton2.Size = new System.Drawing.Size(75, 23);
@@ -277,11 +276,11 @@
         bloom37,
         bloom38};
             this.studioTheme1.Controls.Add(this.listView1);
+            this.studioTheme1.Controls.Add(this.label3);
+            this.studioTheme1.Controls.Add(this.panel3);
             this.studioTheme1.Controls.Add(this.studioButton3);
             this.studioTheme1.Controls.Add(this.textBox2);
-            this.studioTheme1.Controls.Add(this.richTextBox1);
             this.studioTheme1.Controls.Add(this.label2);
-            this.studioTheme1.Controls.Add(this.label1);
             this.studioTheme1.Controls.Add(this.star5);
             this.studioTheme1.Controls.Add(this.star4);
             this.studioTheme1.Controls.Add(this.star3);
@@ -292,7 +291,6 @@
             this.studioTheme1.Controls.Add(this.studioButton2);
             this.studioTheme1.Controls.Add(this.panel1);
             this.studioTheme1.Controls.Add(this.panel2);
-            this.studioTheme1.Controls.Add(this.panel3);
             this.studioTheme1.Customization = "ZEYy/3NVQf9kRjL/RigU/1o8KP8AAAAP////AD4gDP8AAAAU////HgAAAP//////";
             this.studioTheme1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.studioTheme1.Font = new System.Drawing.Font("Verdana", 8F);
@@ -302,131 +300,30 @@
             this.studioTheme1.Name = "studioTheme1";
             this.studioTheme1.NoRounding = false;
             this.studioTheme1.Sizable = true;
-            this.studioTheme1.Size = new System.Drawing.Size(1123, 544);
+            this.studioTheme1.Size = new System.Drawing.Size(845, 544);
             this.studioTheme1.SmartBounds = true;
             this.studioTheme1.TabIndex = 0;
             this.studioTheme1.Text = "studioTheme1";
             this.studioTheme1.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.studioTheme1.Click += new System.EventHandler(this.studioTheme1_Click);
             // 
-            // richTextBox1
+            // label3
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.richTextBox1.Location = new System.Drawing.Point(301, 272);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(494, 179);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "Description";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 14F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(454, 231);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 34);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Comments";
             // 
-            // label2
+            // panel3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 14F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(295, 186);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 34);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "My Rating:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 14F);
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(399, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 34);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "User Rating: ?/5";
-            // 
-            // star5
-            // 
-            this.star5.BackColor = System.Drawing.Color.Transparent;
-            this.star5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.star5.Font = new System.Drawing.Font("Verdana", 28F);
-            this.star5.ForeColor = System.Drawing.Color.Transparent;
-            this.star5.Location = new System.Drawing.Point(733, 170);
-            this.star5.Margin = new System.Windows.Forms.Padding(0);
-            this.star5.Name = "star5";
-            this.star5.Size = new System.Drawing.Size(66, 64);
-            this.star5.TabIndex = 8;
-            this.star5.Text = "★";
-            this.star5.UseCompatibleTextRendering = true;
-            this.star5.UseVisualStyleBackColor = false;
-            this.star5.Click += new System.EventHandler(this.star5_Click);
-            // 
-            // star4
-            // 
-            this.star4.BackColor = System.Drawing.Color.Transparent;
-            this.star4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.star4.Font = new System.Drawing.Font("Verdana", 28F);
-            this.star4.ForeColor = System.Drawing.Color.Transparent;
-            this.star4.Location = new System.Drawing.Point(667, 170);
-            this.star4.Margin = new System.Windows.Forms.Padding(0);
-            this.star4.Name = "star4";
-            this.star4.Size = new System.Drawing.Size(66, 64);
-            this.star4.TabIndex = 7;
-            this.star4.Text = "★";
-            this.star4.UseCompatibleTextRendering = true;
-            this.star4.UseVisualStyleBackColor = false;
-            this.star4.Click += new System.EventHandler(this.star4_Click);
-            // 
-            // star3
-            // 
-            this.star3.BackColor = System.Drawing.Color.Transparent;
-            this.star3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.star3.Font = new System.Drawing.Font("Verdana", 28F);
-            this.star3.ForeColor = System.Drawing.Color.Transparent;
-            this.star3.Location = new System.Drawing.Point(601, 170);
-            this.star3.Margin = new System.Windows.Forms.Padding(0);
-            this.star3.Name = "star3";
-            this.star3.Size = new System.Drawing.Size(66, 64);
-            this.star3.TabIndex = 6;
-            this.star3.Text = "★";
-            this.star3.UseCompatibleTextRendering = true;
-            this.star3.UseVisualStyleBackColor = false;
-            this.star3.Click += new System.EventHandler(this.star3_Click);
-            // 
-            // star2
-            // 
-            this.star2.BackColor = System.Drawing.Color.Transparent;
-            this.star2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.star2.Font = new System.Drawing.Font("Verdana", 28F);
-            this.star2.ForeColor = System.Drawing.Color.Transparent;
-            this.star2.Location = new System.Drawing.Point(535, 170);
-            this.star2.Margin = new System.Windows.Forms.Padding(0);
-            this.star2.Name = "star2";
-            this.star2.Size = new System.Drawing.Size(66, 64);
-            this.star2.TabIndex = 5;
-            this.star2.Text = "★";
-            this.star2.UseCompatibleTextRendering = true;
-            this.star2.UseVisualStyleBackColor = false;
-            this.star2.Click += new System.EventHandler(this.star2_Click);
-            // 
-            // star1
-            // 
-            this.star1.BackColor = System.Drawing.Color.Transparent;
-            this.star1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.star1.Font = new System.Drawing.Font("Verdana", 28F);
-            this.star1.ForeColor = System.Drawing.Color.Transparent;
-            this.star1.Location = new System.Drawing.Point(469, 170);
-            this.star1.Margin = new System.Windows.Forms.Padding(0);
-            this.star1.Name = "star1";
-            this.star1.Size = new System.Drawing.Size(66, 64);
-            this.star1.TabIndex = 4;
-            this.star1.Text = "★";
-            this.star1.UseCompatibleTextRendering = true;
-            this.star1.UseVisualStyleBackColor = false;
-            this.star1.Click += new System.EventHandler(this.star1_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(190, 479);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(613, 27);
-            this.textBox2.TabIndex = 12;
+            this.panel3.Location = new System.Drawing.Point(278, 225);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(538, 46);
+            this.panel3.TabIndex = 18;
             // 
             // studioButton3
             // 
@@ -479,16 +376,106 @@
             this.studioButton3.NoRounding = false;
             this.studioButton3.Size = new System.Drawing.Size(135, 27);
             this.studioButton3.TabIndex = 13;
-            this.studioButton3.Text = "Post Comment";
+            this.studioButton3.Text = "Post Review";
             this.studioButton3.Transparent = true;
             // 
-            // listView1
+            // textBox2
             // 
-            this.listView1.Location = new System.Drawing.Point(822, 91);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(274, 424);
-            this.listView1.TabIndex = 14;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.textBox2.Location = new System.Drawing.Point(190, 479);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(613, 27);
+            this.textBox2.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 14F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(295, 159);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 34);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "My Rating:";
+            // 
+            // star5
+            // 
+            this.star5.BackColor = System.Drawing.Color.Transparent;
+            this.star5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.star5.Font = new System.Drawing.Font("Verdana", 28F);
+            this.star5.ForeColor = System.Drawing.Color.Transparent;
+            this.star5.Location = new System.Drawing.Point(733, 143);
+            this.star5.Margin = new System.Windows.Forms.Padding(0);
+            this.star5.Name = "star5";
+            this.star5.Size = new System.Drawing.Size(66, 64);
+            this.star5.TabIndex = 8;
+            this.star5.Text = "★";
+            this.star5.UseCompatibleTextRendering = true;
+            this.star5.UseVisualStyleBackColor = false;
+            this.star5.Click += new System.EventHandler(this.star5_Click);
+            // 
+            // star4
+            // 
+            this.star4.BackColor = System.Drawing.Color.Transparent;
+            this.star4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.star4.Font = new System.Drawing.Font("Verdana", 28F);
+            this.star4.ForeColor = System.Drawing.Color.Transparent;
+            this.star4.Location = new System.Drawing.Point(667, 143);
+            this.star4.Margin = new System.Windows.Forms.Padding(0);
+            this.star4.Name = "star4";
+            this.star4.Size = new System.Drawing.Size(66, 64);
+            this.star4.TabIndex = 7;
+            this.star4.Text = "★";
+            this.star4.UseCompatibleTextRendering = true;
+            this.star4.UseVisualStyleBackColor = false;
+            this.star4.Click += new System.EventHandler(this.star4_Click);
+            // 
+            // star3
+            // 
+            this.star3.BackColor = System.Drawing.Color.Transparent;
+            this.star3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.star3.Font = new System.Drawing.Font("Verdana", 28F);
+            this.star3.ForeColor = System.Drawing.Color.Transparent;
+            this.star3.Location = new System.Drawing.Point(601, 143);
+            this.star3.Margin = new System.Windows.Forms.Padding(0);
+            this.star3.Name = "star3";
+            this.star3.Size = new System.Drawing.Size(66, 64);
+            this.star3.TabIndex = 6;
+            this.star3.Text = "★";
+            this.star3.UseCompatibleTextRendering = true;
+            this.star3.UseVisualStyleBackColor = false;
+            this.star3.Click += new System.EventHandler(this.star3_Click);
+            // 
+            // star2
+            // 
+            this.star2.BackColor = System.Drawing.Color.Transparent;
+            this.star2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.star2.Font = new System.Drawing.Font("Verdana", 28F);
+            this.star2.ForeColor = System.Drawing.Color.Transparent;
+            this.star2.Location = new System.Drawing.Point(535, 143);
+            this.star2.Margin = new System.Windows.Forms.Padding(0);
+            this.star2.Name = "star2";
+            this.star2.Size = new System.Drawing.Size(66, 64);
+            this.star2.TabIndex = 5;
+            this.star2.Text = "★";
+            this.star2.UseCompatibleTextRendering = true;
+            this.star2.UseVisualStyleBackColor = false;
+            this.star2.Click += new System.EventHandler(this.star2_Click);
+            // 
+            // star1
+            // 
+            this.star1.BackColor = System.Drawing.Color.Transparent;
+            this.star1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.star1.Font = new System.Drawing.Font("Verdana", 28F);
+            this.star1.ForeColor = System.Drawing.Color.Transparent;
+            this.star1.Location = new System.Drawing.Point(469, 143);
+            this.star1.Margin = new System.Windows.Forms.Padding(0);
+            this.star1.Name = "star1";
+            this.star1.Size = new System.Drawing.Size(66, 64);
+            this.star1.TabIndex = 4;
+            this.star1.Text = "★";
+            this.star1.UseCompatibleTextRendering = true;
+            this.star1.UseVisualStyleBackColor = false;
+            this.star1.Click += new System.EventHandler(this.star1_Click);
             // 
             // panel1
             // 
@@ -499,35 +486,37 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.rate);
             this.panel2.Location = new System.Drawing.Point(278, 91);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(538, 372);
+            this.panel2.Size = new System.Drawing.Size(538, 128);
             this.panel2.TabIndex = 16;
             // 
-            // label3
+            // rate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 14F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(51, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 34);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Comments";
+            this.rate.AutoSize = true;
+            this.rate.Font = new System.Drawing.Font("Verdana", 14F);
+            this.rate.ForeColor = System.Drawing.Color.LightGray;
+            this.rate.Location = new System.Drawing.Point(17, 9);
+            this.rate.Name = "rate";
+            this.rate.Size = new System.Drawing.Size(174, 34);
+            this.rate.TabIndex = 10;
+            this.rate.Text = "Rating: ?/5";
             // 
-            // panel3
+            // listView1
             // 
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(822, 43);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(274, 41);
-            this.panel3.TabIndex = 18;
+            this.listView1.FormattingEnabled = true;
+            this.listView1.ItemHeight = 18;
+            this.listView1.Location = new System.Drawing.Point(278, 278);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(538, 184);
+            this.listView1.TabIndex = 19;
             // 
             // MovieProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 544);
+            this.ClientSize = new System.Drawing.Size(845, 544);
             this.Controls.Add(this.studioTheme1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MovieProfile";
@@ -538,8 +527,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.studioTheme1.ResumeLayout(false);
             this.studioTheme1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -556,14 +545,13 @@
         private System.Windows.Forms.Button star2;
         private System.Windows.Forms.Button star1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ListView listView1;
         private StudioButton studioButton3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label rate;
+        private System.Windows.Forms.ListBox listView1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Bloom bloom1 = new Bloom();
             Bloom bloom2 = new Bloom();
             Bloom bloom3 = new Bloom();
@@ -92,24 +93,38 @@
             Bloom bloom62 = new Bloom();
             Bloom bloom63 = new Bloom();
             Bloom bloom64 = new Bloom();
+            Bloom bloom65 = new Bloom();
+            Bloom bloom66 = new Bloom();
+            Bloom bloom67 = new Bloom();
+            Bloom bloom68 = new Bloom();
+            Bloom bloom69 = new Bloom();
+            Bloom bloom70 = new Bloom();
+            Bloom bloom71 = new Bloom();
+            Bloom bloom72 = new Bloom();
+            Bloom bloom73 = new Bloom();
+            Bloom bloom74 = new Bloom();
+            Bloom bloom75 = new Bloom();
+            Bloom bloom76 = new Bloom();
+            Bloom bloom77 = new Bloom();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.studioTheme1 = new StudioTheme();
+            this.richTextBox4 = new System.Windows.Forms.TextBox();
+            this.richTextBox3 = new System.Windows.Forms.TextBox();
+            this.richTextBox2 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.TextBox();
+            this.studioButton1 = new StudioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.exit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new StudioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new StudioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.button6 = new StudioButton();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.button5 = new StudioButton();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.studioTheme1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -141,6 +156,12 @@
             this.button2.Text = "Register";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // studioTheme1
             // 
@@ -183,20 +204,20 @@
         bloom10,
         bloom11,
         bloom12};
+            this.studioTheme1.Controls.Add(this.richTextBox4);
+            this.studioTheme1.Controls.Add(this.richTextBox3);
+            this.studioTheme1.Controls.Add(this.richTextBox2);
+            this.studioTheme1.Controls.Add(this.richTextBox1);
+            this.studioTheme1.Controls.Add(this.studioButton1);
             this.studioTheme1.Controls.Add(this.label4);
-            this.studioTheme1.Controls.Add(this.exit);
             this.studioTheme1.Controls.Add(this.label3);
             this.studioTheme1.Controls.Add(this.button4);
             this.studioTheme1.Controls.Add(this.label2);
             this.studioTheme1.Controls.Add(this.button3);
             this.studioTheme1.Controls.Add(this.label1);
             this.studioTheme1.Controls.Add(this.button6);
-            this.studioTheme1.Controls.Add(this.richTextBox4);
             this.studioTheme1.Controls.Add(this.button5);
-            this.studioTheme1.Controls.Add(this.richTextBox3);
-            this.studioTheme1.Controls.Add(this.richTextBox2);
             this.studioTheme1.Controls.Add(this.pictureBox1);
-            this.studioTheme1.Controls.Add(this.richTextBox1);
             this.studioTheme1.Customization = "ZEYy/3NVQf9kRjL/RigU/1o8KP8AAAAP////AD4gDP8AAAAU////HgAAAP//////";
             this.studioTheme1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.studioTheme1.Font = new System.Drawing.Font("Verdana", 8F);
@@ -212,51 +233,48 @@
             this.studioTheme1.Text = "Movie Recommender";
             this.studioTheme1.TransparencyKey = System.Drawing.Color.Fuchsia;
             // 
-            // label4
+            // richTextBox4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label4.Font = new System.Drawing.Font("Myriad Arabic", 16F);
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label4.Location = new System.Drawing.Point(92, 423);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 44);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Password";
-            this.label4.Visible = false;
+            this.richTextBox4.Font = new System.Drawing.Font("Verdana", 18F);
+            this.richTextBox4.Location = new System.Drawing.Point(235, 415);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.PasswordChar = '☻';
+            this.richTextBox4.Size = new System.Drawing.Size(324, 51);
+            this.richTextBox4.TabIndex = 16;
+            this.richTextBox4.Visible = false;
+            this.richTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBox4_KeyPress);
             // 
-            // exit
+            // richTextBox3
             // 
-            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.exit.Location = new System.Drawing.Point(572, 2);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(75, 25);
-            this.exit.TabIndex = 5;
-            this.exit.Text = "X";
-            this.exit.UseVisualStyleBackColor = true;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
+            this.richTextBox3.Font = new System.Drawing.Font("Verdana", 18F);
+            this.richTextBox3.Location = new System.Drawing.Point(235, 345);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(324, 51);
+            this.richTextBox3.TabIndex = 15;
+            this.richTextBox3.Visible = false;
             // 
-            // label3
+            // richTextBox2
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label3.Font = new System.Drawing.Font("Myriad Arabic", 16F);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label3.Location = new System.Drawing.Point(92, 352);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 44);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Username";
-            this.label3.Visible = false;
+            this.richTextBox2.Font = new System.Drawing.Font("Verdana", 18F);
+            this.richTextBox2.Location = new System.Drawing.Point(235, 273);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(324, 51);
+            this.richTextBox2.TabIndex = 14;
+            this.richTextBox2.Visible = false;
+            this.richTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBox2_KeyPress);
             // 
-            // button4
+            // richTextBox1
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.richTextBox1.Font = new System.Drawing.Font("Verdana", 18F);
+            this.richTextBox1.Location = new System.Drawing.Point(235, 202);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(324, 51);
+            this.richTextBox1.TabIndex = 13;
+            this.richTextBox1.Visible = false;
+            // 
+            // studioButton1
+            // 
+            this.studioButton1.BackColor = System.Drawing.Color.Transparent;
             bloom13.Name = "DownGradient1";
             bloom13.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
             bloom14.Name = "DownGradient2";
@@ -283,7 +301,7 @@
             bloom24.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             bloom25.Name = "Corners";
             bloom25.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.button4.Colors = new Bloom[] {
+            this.studioButton1.Colors = new Bloom[] {
         bloom13,
         bloom14,
         bloom15,
@@ -297,6 +315,91 @@
         bloom23,
         bloom24,
         bloom25};
+            this.studioButton1.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
+            this.studioButton1.Font = new System.Drawing.Font("Verdana", 8F);
+            this.studioButton1.Image = null;
+            this.studioButton1.Location = new System.Drawing.Point(570, 4);
+            this.studioButton1.Name = "studioButton1";
+            this.studioButton1.NoRounding = false;
+            this.studioButton1.Size = new System.Drawing.Size(75, 23);
+            this.studioButton1.TabIndex = 12;
+            this.studioButton1.Text = "X";
+            this.studioButton1.Transparent = true;
+            this.studioButton1.Click += new System.EventHandler(this.studioButton1_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.label4.Font = new System.Drawing.Font("Myriad Arabic", 16F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label4.Location = new System.Drawing.Point(92, 423);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 44);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Password";
+            this.label4.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.label3.Font = new System.Drawing.Font("Myriad Arabic", 16F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label3.Location = new System.Drawing.Point(92, 352);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 44);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Username";
+            this.label3.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            bloom26.Name = "DownGradient1";
+            bloom26.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
+            bloom27.Name = "DownGradient2";
+            bloom27.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
+            bloom28.Name = "NoneGradient1";
+            bloom28.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
+            bloom29.Name = "NoneGradient2";
+            bloom29.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
+            bloom30.Name = "Shine1";
+            bloom30.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom31.Name = "Shine2A";
+            bloom31.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom32.Name = "Shine2B";
+            bloom32.Value = System.Drawing.Color.Transparent;
+            bloom33.Name = "Shine3";
+            bloom33.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom34.Name = "TextShade";
+            bloom34.Value = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            bloom35.Name = "Text";
+            bloom35.Value = System.Drawing.Color.White;
+            bloom36.Name = "Glow";
+            bloom36.Value = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom37.Name = "Border";
+            bloom37.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            bloom38.Name = "Corners";
+            bloom38.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.button4.Colors = new Bloom[] {
+        bloom26,
+        bloom27,
+        bloom28,
+        bloom29,
+        bloom30,
+        bloom31,
+        bloom32,
+        bloom33,
+        bloom34,
+        bloom35,
+        bloom36,
+        bloom37,
+        bloom38};
             this.button4.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
             this.button4.Font = new System.Drawing.Font("Verdana", 8F);
             this.button4.Image = null;
@@ -328,46 +431,46 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            bloom26.Name = "DownGradient1";
-            bloom26.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
-            bloom27.Name = "DownGradient2";
-            bloom27.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
-            bloom28.Name = "NoneGradient1";
-            bloom28.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
-            bloom29.Name = "NoneGradient2";
-            bloom29.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
-            bloom30.Name = "Shine1";
-            bloom30.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bloom31.Name = "Shine2A";
-            bloom31.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bloom32.Name = "Shine2B";
-            bloom32.Value = System.Drawing.Color.Transparent;
-            bloom33.Name = "Shine3";
-            bloom33.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bloom34.Name = "TextShade";
-            bloom34.Value = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            bloom35.Name = "Text";
-            bloom35.Value = System.Drawing.Color.White;
-            bloom36.Name = "Glow";
-            bloom36.Value = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bloom37.Name = "Border";
-            bloom37.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            bloom38.Name = "Corners";
-            bloom38.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            bloom39.Name = "DownGradient1";
+            bloom39.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
+            bloom40.Name = "DownGradient2";
+            bloom40.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
+            bloom41.Name = "NoneGradient1";
+            bloom41.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
+            bloom42.Name = "NoneGradient2";
+            bloom42.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
+            bloom43.Name = "Shine1";
+            bloom43.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom44.Name = "Shine2A";
+            bloom44.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom45.Name = "Shine2B";
+            bloom45.Value = System.Drawing.Color.Transparent;
+            bloom46.Name = "Shine3";
+            bloom46.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom47.Name = "TextShade";
+            bloom47.Value = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            bloom48.Name = "Text";
+            bloom48.Value = System.Drawing.Color.White;
+            bloom49.Name = "Glow";
+            bloom49.Value = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom50.Name = "Border";
+            bloom50.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            bloom51.Name = "Corners";
+            bloom51.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             this.button3.Colors = new Bloom[] {
-        bloom26,
-        bloom27,
-        bloom28,
-        bloom29,
-        bloom30,
-        bloom31,
-        bloom32,
-        bloom33,
-        bloom34,
-        bloom35,
-        bloom36,
-        bloom37,
-        bloom38};
+        bloom39,
+        bloom40,
+        bloom41,
+        bloom42,
+        bloom43,
+        bloom44,
+        bloom45,
+        bloom46,
+        bloom47,
+        bloom48,
+        bloom49,
+        bloom50,
+        bloom51};
             this.button3.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
             this.button3.Font = new System.Drawing.Font("Verdana", 8F);
             this.button3.Image = null;
@@ -399,78 +502,6 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Transparent;
-            bloom39.Name = "DownGradient1";
-            bloom39.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
-            bloom40.Name = "DownGradient2";
-            bloom40.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
-            bloom41.Name = "NoneGradient1";
-            bloom41.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
-            bloom42.Name = "NoneGradient2";
-            bloom42.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
-            bloom43.Name = "Shine1";
-            bloom43.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bloom44.Name = "Shine2A";
-            bloom44.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bloom45.Name = "Shine2B";
-            bloom45.Value = System.Drawing.Color.Transparent;
-            bloom46.Name = "Shine3";
-            bloom46.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bloom47.Name = "TextShade";
-            bloom47.Value = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            bloom48.Name = "Text";
-            bloom48.Value = System.Drawing.Color.White;
-            bloom49.Name = "Glow";
-            bloom49.Value = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bloom50.Name = "Border";
-            bloom50.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            bloom51.Name = "Corners";
-            bloom51.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.button6.Colors = new Bloom[] {
-        bloom39,
-        bloom40,
-        bloom41,
-        bloom42,
-        bloom43,
-        bloom44,
-        bloom45,
-        bloom46,
-        bloom47,
-        bloom48,
-        bloom49,
-        bloom50,
-        bloom51};
-            this.button6.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
-            this.button6.Font = new System.Drawing.Font("Verdana", 8F);
-            this.button6.Image = null;
-            this.button6.Location = new System.Drawing.Point(259, 399);
-            this.button6.Name = "button6";
-            this.button6.NoRounding = false;
-            this.button6.Size = new System.Drawing.Size(324, 88);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Log In";
-            this.button6.Transparent = true;
-            this.button6.Visible = false;
-            this.button6.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox4.BackColor = System.Drawing.SystemColors.Desktop;
-            this.richTextBox4.Font = new System.Drawing.Font("Myriad Arabic", 26F);
-            this.richTextBox4.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.richTextBox4.Location = new System.Drawing.Point(233, 409);
-            this.richTextBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox4.Multiline = false;
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(324, 66);
-            this.richTextBox4.TabIndex = 3;
-            this.richTextBox4.Text = "";
-            this.richTextBox4.Visible = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
             bloom52.Name = "DownGradient1";
             bloom52.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
             bloom53.Name = "DownGradient2";
@@ -497,7 +528,7 @@
             bloom63.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             bloom64.Name = "Corners";
             bloom64.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.button5.Colors = new Bloom[] {
+            this.button6.Colors = new Bloom[] {
         bloom52,
         bloom53,
         bloom54,
@@ -511,6 +542,62 @@
         bloom62,
         bloom63,
         bloom64};
+            this.button6.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
+            this.button6.Font = new System.Drawing.Font("Verdana", 8F);
+            this.button6.Image = null;
+            this.button6.Location = new System.Drawing.Point(259, 399);
+            this.button6.Name = "button6";
+            this.button6.NoRounding = false;
+            this.button6.Size = new System.Drawing.Size(324, 88);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Log In";
+            this.button6.Transparent = true;
+            this.button6.Visible = false;
+            this.button6.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            bloom65.Name = "DownGradient1";
+            bloom65.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
+            bloom66.Name = "DownGradient2";
+            bloom66.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
+            bloom67.Name = "NoneGradient1";
+            bloom67.Value = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(85)))), ((int)(((byte)(115)))));
+            bloom68.Name = "NoneGradient2";
+            bloom68.Value = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(95)))));
+            bloom69.Name = "Shine1";
+            bloom69.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom70.Name = "Shine2A";
+            bloom70.Value = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom71.Name = "Shine2B";
+            bloom71.Value = System.Drawing.Color.Transparent;
+            bloom72.Name = "Shine3";
+            bloom72.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom73.Name = "TextShade";
+            bloom73.Value = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            bloom74.Name = "Text";
+            bloom74.Value = System.Drawing.Color.White;
+            bloom75.Name = "Glow";
+            bloom75.Value = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bloom76.Name = "Border";
+            bloom76.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            bloom77.Name = "Corners";
+            bloom77.Value = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.button5.Colors = new Bloom[] {
+        bloom65,
+        bloom66,
+        bloom67,
+        bloom68,
+        bloom69,
+        bloom70,
+        bloom71,
+        bloom72,
+        bloom73,
+        bloom74,
+        bloom75,
+        bloom76,
+        bloom77};
             this.button5.Customization = "X0Et/3NVQf9zVUH/X0Et/////x7///8e////AP///xQAAAAy/////////wpGKBT/RigU/w==";
             this.button5.Font = new System.Drawing.Font("Verdana", 8F);
             this.button5.Image = null;
@@ -524,38 +611,6 @@
             this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button4_Click);
             // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.richTextBox3.Font = new System.Drawing.Font("Myriad Arabic", 26F);
-            this.richTextBox3.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.richTextBox3.Location = new System.Drawing.Point(233, 338);
-            this.richTextBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox3.Multiline = false;
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(324, 66);
-            this.richTextBox3.TabIndex = 2;
-            this.richTextBox3.Text = "";
-            this.richTextBox3.Visible = false;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.richTextBox2.Font = new System.Drawing.Font("Myriad Arabic", 26F);
-            this.richTextBox2.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.richTextBox2.Location = new System.Drawing.Point(233, 266);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox2.Multiline = false;
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(324, 66);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "";
-            this.richTextBox2.Visible = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -566,22 +621,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.richTextBox1.Font = new System.Drawing.Font("Myriad Arabic", 26F);
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.richTextBox1.Location = new System.Drawing.Point(233, 195);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox1.Multiline = false;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(324, 66);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.Visible = false;
             // 
             // Form1
             // 
@@ -611,20 +650,21 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RichTextBox richTextBox4;
         private StudioTheme studioTheme1;
         private StudioButton button4;
         private StudioButton button3;
         private StudioButton button6;
         private StudioButton button5;
-        private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.Timer timer1;
+        private StudioButton studioButton1;
+        private System.Windows.Forms.TextBox richTextBox4;
+        private System.Windows.Forms.TextBox richTextBox3;
+        private System.Windows.Forms.TextBox richTextBox2;
+        private System.Windows.Forms.TextBox richTextBox1;
     }
 }
 

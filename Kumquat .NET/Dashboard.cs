@@ -19,6 +19,7 @@ namespace Kumquat.NET
         public Dashboard()
         {
             InitializeComponent();
+            profmajor.SelectedIndex = 0;
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             if(DBHelper.getCurrentUser().getProfile() != null)
@@ -26,12 +27,6 @@ namespace Kumquat.NET
                 createprof_Click(null, null);
             }
         }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void studioButton4_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -41,6 +36,8 @@ namespace Kumquat.NET
 
         private void createprof_Click(object sender, EventArgs e)
         {
+            if (DBHelper.getCurrentUser().getProfile() == null)
+            DBHelper.getCurrentUser().setProfile(new Profile("CS","Add description here."));
             createprof.Visible = false;
             noprof.Visible = false;
             userprof.Visible = true;
@@ -52,6 +49,12 @@ namespace Kumquat.NET
             profmajor.Visible = true;
             profdesc.Visible = true;
             saveprof.Visible = true;
+            profmajor.Text = DBHelper.getCurrentUser().getProfile().getMajor();
+            profdesc.Text = DBHelper.getCurrentUser().getProfile().getDesc();
+            userprof.Text = DBHelper.getCurrentUser().getUsername();
+            profname.Text = DBHelper.getCurrentUser().getName();
+            profemail.Text = DBHelper.getCurrentUser().getEmail();
+
         }
 
         private void doSearch2(object sender, KeyEventArgs e)
@@ -82,10 +85,14 @@ namespace Kumquat.NET
                     htmlCode = client.DownloadString("http://www.omdbapi.com/?s=" + q);
                     if (htmlCode.Contains("Error\":\"Movie"))
                     {
+                        //Flop
+                        timer1.Enabled = false;
                         MessageBox.Show("Movie was not found.");
                     }
                     else if (htmlCode.Contains("Error\":"))
                     {
+                        //Flop
+                        timer1.Enabled = false;
                         MessageBox.Show("Search terms must be at least 2 characters long.");
                     }
                     else
@@ -117,30 +124,46 @@ namespace Kumquat.NET
                                 lvi.ImageKey = "notfound.png";
                             }
                             //Generate ListViewItem
-                            lvi.Text = titles[i] + " (" + years[i] + ") RATING/5";
-                            lvi.Tag = titles[i] + "☻" + years[i] + "☻" + "4";
+                            lvi.Text = titles[i] + " (" + years[i] + ")";
+                            lvi.Tag = titles[i] + "☻" + years[i];
                             listView1.Items.Add(lvi);
-
-                            //Flop
-                            timer1.Enabled = false;
                         }
                     }
+
+                    
                 }
+        
             }
+            //Flop
+            timer1.Enabled = false;
         }
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            String data = e.Item.Text;
-            Image img = imageList1.Images[e.Item.ImageKey];
-            MovieProfile mp = new MovieProfile(e.Item, data, img);
-            mp.Show();
+            if (e.Item.Selected == true)
+            {
+                String data = e.Item.Text;
+                Image img = imageList1.Images[e.Item.ImageKey];
+                MovieProfile mp = new MovieProfile(e.Item, data, img);
+                mp.Show();
+            }
         }
 
         private void saveprof_Click(object sender, EventArgs e)
         {
-            Profile p = new Profile(profmajor.Text, profdesc.Text);
+            Profile p = DBHelper.getCurrentUser().getProfile();
+            p.setMajor(profmajor.Text);
+            p.setDesc(profdesc.Text);
             DBHelper.getCurrentUser().setProfile(p);
+            DBHelper.setMajor(DBHelper.getCurrentUser().getUsername(), profmajor.Text);
+            DBHelper.setDescription(DBHelper.getCurrentUser().getUsername(), profdesc.Text);
+            MessageBox.Show("Saved!");
+        }
+
+        private void studioButton5_Click(object sender, EventArgs e)
+        {
+            DBHelper.quit();
+            Application.Exit();
         }
     }
 }

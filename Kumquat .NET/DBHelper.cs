@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -17,9 +18,22 @@ namespace Kumquat.NET {
 
         public static User getCurrentUser() { return currentUser; }
         public static Dictionary<String, User> getUsersMap() { return allUsers; }
-        public static Dictionary<String, Movie> getMoviesMap() { return allMovies; }
+        public static Dictionary<String, Movie> getMoviesMap()
+        { return allMovies; }
 
         public static void setCurrentUser(User u) { currentUser = u; }
+
+        public static void quit()
+        {
+            try
+            {
+                Process[] proc = Process.GetProcessesByName("javaw");
+                proc[0].Kill();
+            } catch
+            {
+
+            }
+        }
 
         public static String getDigest(String password) {
             SHA256 sha256 = SHA256Managed.Create();
@@ -172,7 +186,7 @@ namespace Kumquat.NET {
                     List<Rating> rs = new List<Rating>();
 
                     int lastRatingIndex = ratingsStart + 6;
-
+                    rs.Clear();
                     while (lastRatingIndex < ratingsEnd) {
                         int currentRatingEnd = s.IndexOf("\")rtg;|", lastRatingIndex);
                         String currentRating = s.Substring(lastRatingIndex, currentRatingEnd - lastRatingIndex);
