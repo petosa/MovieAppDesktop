@@ -208,10 +208,7 @@ namespace Kumquat.NET {
                         lastRatingIndex = currentRatingEnd + 13;
                     }
 
-                    Console.WriteLine(rs.Count());
-
                     if (allMovies.ContainsKey(title)) {
-                        Console.WriteLine("not this logic");
                         if (!allMovies[title].getURL().Equals(imgURL)) {
                             allMovies[title].setURL(imgURL);
                         }
@@ -226,7 +223,6 @@ namespace Kumquat.NET {
                             }
                         }
                     } else {
-                        Console.WriteLine("this logic");
                         Movie m = new Movie(title);
                         m.setAverageRating(ar);
                         m.setURL(imgURL);
