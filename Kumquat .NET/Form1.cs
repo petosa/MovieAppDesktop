@@ -141,10 +141,12 @@ namespace Kumquat.NET
         private void timer1_Tick(object sender, EventArgs e)
         {
             DBHelper.parseUsers();
+            DBHelper.parseMovies();
         }
 
         private void studioButton1_Click(object sender, EventArgs e)
         {
+            DBHelper.quit();
             Application.Exit();
         }
 

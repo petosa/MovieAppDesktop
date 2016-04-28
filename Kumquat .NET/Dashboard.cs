@@ -85,10 +85,14 @@ namespace Kumquat.NET
                     htmlCode = client.DownloadString("http://www.omdbapi.com/?s=" + q);
                     if (htmlCode.Contains("Error\":\"Movie"))
                     {
+                        //Flop
+                        timer1.Enabled = false;
                         MessageBox.Show("Movie was not found.");
                     }
                     else if (htmlCode.Contains("Error\":"))
                     {
+                        //Flop
+                        timer1.Enabled = false;
                         MessageBox.Show("Search terms must be at least 2 characters long.");
                     }
                     else
@@ -120,16 +124,18 @@ namespace Kumquat.NET
                                 lvi.ImageKey = "notfound.png";
                             }
                             //Generate ListViewItem
-                            lvi.Text = titles[i] + " (" + years[i] + ") RATING/5";
-                            lvi.Tag = titles[i] + "☻" + years[i] + "☻" + "4";
+                            lvi.Text = titles[i] + " (" + years[i] + ")";
+                            lvi.Tag = titles[i] + "☻" + years[i];
                             listView1.Items.Add(lvi);
-
-                            //Flop
-                            timer1.Enabled = false;
                         }
                     }
+
+                    
                 }
+        
             }
+            //Flop
+            timer1.Enabled = false;
         }
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -156,6 +162,7 @@ namespace Kumquat.NET
 
         private void studioButton5_Click(object sender, EventArgs e)
         {
+            DBHelper.quit();
             Application.Exit();
         }
     }

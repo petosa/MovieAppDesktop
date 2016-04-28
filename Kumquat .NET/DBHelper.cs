@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -20,6 +21,18 @@ namespace Kumquat.NET {
         public static Dictionary<String, Movie> getMoviesMap() { return allMovies; }
 
         public static void setCurrentUser(User u) { currentUser = u; }
+
+        public static void quit()
+        {
+            try
+            {
+                Process[] proc = Process.GetProcessesByName("javaw");
+                proc[0].Kill();
+            } catch
+            {
+
+            }
+        }
 
         public static String getDigest(String password) {
             SHA256 sha256 = SHA256Managed.Create();
