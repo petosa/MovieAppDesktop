@@ -66,7 +66,7 @@ namespace Kumquat.NET {
 
                     return file.ToArray();
                 }
-            } catch (IOException e) {
+            } catch (IOException) {
                 System.Threading.Thread.Sleep(500);
                 return tsReadAllLines(path);
             }
@@ -151,6 +151,92 @@ namespace Kumquat.NET {
 
         public static void parseMovies() {
             String[] lines = tsReadAllLines("movies.csv");
+
+            foreach (String s in lines) {
+                int titleStart = s.IndexOf("@t(\"") + 4;
+                int titleEnd = s.IndexOf("\")t;|");
+                String title = s.Substring(titleStart, titleEnd - titleStart);
+
+                int imgURLStart = s.IndexOf("@i(\"") + 4;
+                int imgURLEnd = s.IndexOf("\")i;|");
+                String imgURL = s.Substring(imgURLStart, imgURLEnd - imgURLStart);
+
+                int arStart = s.IndexOf("@ar(\"") + 5;
+                int arEnd = s.IndexOf("\")ar;|");
+                float ar = float.Parse(s.Substring(arStart, arEnd - arStart));
+
+                if (s.Contains("@rtgs(\"") && s.Contains("\")rtgs;|")) {
+                    int ratingsStart = s.IndexOf("@rtgs(\"") + 7;
+                    int ratingsEnd = s.IndexOf("\")rtgs;|");
+
+                    List<Rating> rs = new List<Rating>();
+
+                    int lastRatingIndex = ratingsStart + 6;
+
+                    while (lastRatingIndex < ratingsEnd) {
+                        int currentRatingEnd = s.IndexOf("\")rtg;|", lastRatingIndex);
+                        String currentRating = s.Substring(lastRatingIndex, currentRatingEnd - lastRatingIndex);
+
+                        int cStart = currentRating.IndexOf("@c(\"") + 4;
+                        int cEnd = currentRating.IndexOf("\")c;|");
+                        String c = currentRating.Substring(cStart, cEnd - cStart);
+
+                        int rStart = currentRating.IndexOf("@r(\"") + 4;
+                        int rEnd = currentRating.IndexOf("\")r;|");
+                        float r = float.Parse(currentRating.Substring(rStart, rEnd - rStart));
+
+                        int pStart = currentRating.IndexOf("@p(\"") + 4;
+                        int pEnd = currentRating.IndexOf("\")p;|");
+                        User p = getUser(currentRating.Substring(pStart, pEnd - pStart));
+
+                        rs.Add(new Rating(r, c, p));
+
+                        lastRatingIndex = currentRatingEnd + 13;
+                    }
+
+                    if (allMovies.ContainsKey(title)) {
+                        if (!allMovies[title].getURL().Equals(imgURL)) {
+                            allMovies[title].setURL(imgURL);
+                        }
+
+                        if (!allMovies[title].getAverageRating().Equals(ar)) {
+                            allMovies[title].setAverageRating(ar);
+                        }
+
+                        foreach (Rating r in rs) {
+                            if (!allMovies[title].getRatings().Contains(r)) {
+                                allMovies[title].addRating(r);
+                            }
+                        }
+                    } else {
+                        Movie m = new Movie(title);
+                        m.setAverageRating(ar);
+                        m.setURL(imgURL);
+
+                        foreach (Rating r in rs) {
+                            m.addRating(r);
+                        }
+
+                        allMovies.Add(title, m);
+                    }
+                } else {
+                    if (allMovies.ContainsKey(title)) {
+                        if (!allMovies[title].getURL().Equals(imgURL)) {
+                            allMovies[title].setURL(imgURL);
+                        }
+
+                        if (!allMovies[title].getAverageRating().Equals(ar)) {
+                            allMovies[title].setAverageRating(ar);
+                        }
+                    } else {
+                        Movie m = new Movie(title);
+                        m.setAverageRating(ar);
+                        m.setURL(imgURL);
+
+                        allMovies.Add(title, m);
+                    }
+                }
+            }
         }
 
         public static List<User> getAllUsers() { return allUsers.Values.ToList(); }
@@ -211,6 +297,7 @@ namespace Kumquat.NET {
         public static void activateUser(String username) {
             setStatus(username, "Active");
         }
+
         public static void setDescription(String username, String description) {
             allUsers[username].getProfile().setDesc(description);
             StringBuilder sb = new StringBuilder();
